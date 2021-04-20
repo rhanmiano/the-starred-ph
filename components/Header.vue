@@ -1,15 +1,18 @@
 <template>
-  <header class="bg-white">
-    <div class="self-center pl-6">the starred ph</div>
-    <nav class="h-100 self-center">
-      <ul class="nav-wrapper flex content-center">
-        <li class="nav-list"><nuxt-link to="/evenat">about</nuxt-link></li>
-        <li class="nav-list">
-          <nuxt-link to="/profile">contribute</nuxt-link>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div>
+    <div class="trapezoidal-bg"></div>
+    <header class="bg-transparent">
+      <div class="self-center pl-6 font-pt-sans font-bold">the starred ph</div>
+      <nav class="h-100 self-center">
+        <ul class="nav-wrapper flex content-center">
+          <li class="nav-list"><nuxt-link to="/evenat">about</nuxt-link></li>
+          <li class="nav-list">
+            <nuxt-link to="/profile">contribute</nuxt-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 </template>
 
 <script>
@@ -38,7 +41,16 @@ ul.nav-wrapper {
     }
   }
 }
-header {
-  @apply w-full h-20 flex justify-between content-center shadow-md px-3 py-2 z-30;
+
+.trapezoidal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #151d7e;
+  background: linear-gradient(190deg, #151d7e 20%, #207fb1 130%);
+  transform: skew(-45deg, 19deg) translate(-35px, -130px) scale(1.2);
+  height: 100vh;
+  width: 100%;
 }
 </style>

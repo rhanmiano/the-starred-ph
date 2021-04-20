@@ -29,7 +29,7 @@ html {
 // Body base
 body {
   color: theme('colors.layout-main-black');
-  background: #fff;
+  background: theme('colors.layout-main-white');
   font-size: inherit;
   @apply font-normal;
 }

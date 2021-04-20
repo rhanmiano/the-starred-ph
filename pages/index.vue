@@ -28,13 +28,14 @@ ul.nav-wrapper {
     display: inline-block;
     font-weight: bolder;
     margin-right: 15px;
-    @apply text-sm;
+    @apply text-sm font-thin;
     &.__active {
       @apply text-blue-400;
     }
   }
 }
 header {
-  @apply w-full h-20 flex justify-between content-center shadow-md px-3 py-2 z-30;
+  @apply w-full h-20 flex justify-between content-center px-3 py-2 z-30;
+  color: theme('colors.denotive-highlight');
 }
 </style>
