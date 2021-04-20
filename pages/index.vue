@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <Header />
-    <Banner />
+    <main class="w-screen m-auto sm:w-3/4">
+      <Banner />
+    </main>
   </div>
 </template>
 

@@ -49,8 +49,21 @@ ul.nav-wrapper {
   z-index: -1;
   background: #151d7e;
   background: linear-gradient(190deg, #151d7e 20%, #207fb1 130%);
-  transform: skew(-45deg, 19deg) translate(-35px, -130px) scale(1.2);
-  height: 100vh;
+  transform: skew(-45deg, 19deg) translate(-161px, -243px) scale(1.5);
+  height: 720px;
   width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .trapezoidal-bg {
+    transform: skew(-45deg, 19deg) translate(-175px, -190px) scale(1.2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .trapezoidal-bg {
+    // transform: skew(-45deg, 19deg) translate(-35px, -130px) scale(1.2);
+    transform: skew(-45deg, 19deg) translate(-115px, -215px) scale(1.2);
+  }
 }
 </style>
