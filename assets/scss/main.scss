@@ -32,6 +32,7 @@ body {
   background: theme('colors.layout-main-white');
   font-size: inherit;
   @apply font-normal;
+  overflow-x: hidden;
 }
 
 h1,

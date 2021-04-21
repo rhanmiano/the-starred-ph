@@ -5,9 +5,9 @@
       <div class="self-center pl-6 font-pt-sans font-bold">the starred ph</div>
       <nav class="h-100 self-center">
         <ul class="nav-wrapper flex content-center">
-          <li class="nav-list"><nuxt-link to="/evenat">about</nuxt-link></li>
+          <li class="nav-list"><nuxt-link to="/about">about</nuxt-link></li>
           <li class="nav-list">
-            <nuxt-link to="/profile">contribute</nuxt-link>
+            <nuxt-link to="/contribute">contribute</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -19,11 +19,7 @@
 export default {
   name: 'Header',
   data() {
-    return {
-      hello: 'asdasdasd',
-      asd: 'asiduasid',
-      hot: 'galaw',
-    }
+    return {}
   },
 }
 </script>

@@ -3,19 +3,13 @@
     <Header />
     <main class="w-screen m-auto sm:w-3/4">
       <Banner />
+      <ListContainer />
     </main>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import Banner from '@/components/Banner.vue'
-
 export default {
-  components: {
-    Header,
-    Banner,
-  },
   data() {
     return {}
   },
