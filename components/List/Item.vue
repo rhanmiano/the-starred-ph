@@ -1,21 +1,28 @@
 <template>
-  <div class="ui-card--list">
+  <div v-if="repo" class="ui-card--list">
     <div class="ui-card--list-item">
       <div class="--list-item-info">
         <h3 class="--list-item-title">
-          <span>mithi</span> / <span>robotics-courseworld</span>
+          <span>{{ repo.owner.login }}</span> / <span>{{ repo.name }}</span>
         </h3>
         <p class="--list-item-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
-          voluptatibus omnis! Aliquam consequuntur placeat eveniet totam tenetur
-          vel sapiente alias itaque odit, earum ut, mollitia dolor sunt libero,
-          adipisci minus.
+          {{ repo.description }}
         </p>
         <div class="--list-item-meta">
           <p>
-            <span class="--meta-language-color"></span><span>Javascript</span
-            ><span>Created at: Jan 2019</span
-            ><span>Last Updated at: Dec 2019</span>
+            <span
+              class="--meta-language-color"
+              :style="{
+                backgroundColor: repo.primaryLanguage
+                  ? repo.primaryLanguage.color
+                  : 'gainsboro',
+              }"
+            ></span
+            ><span>{{
+              repo.primaryLanguage ? repo.primaryLanguage.name : '--'
+            }}</span
+            ><span>Created at: {{ repo.createdAt }}</span
+            ><span>Last Updated at: {{ repo.updatedAt }}</span>
           </p>
         </div>
       </div>
@@ -30,7 +37,7 @@
               :fill="'#207fb1'"
               icon-style="monochrome"
             ></unicon> </span
-          ><span class="--stars-count">14.1k</span>
+          ><span class="--stars-count">{{ repo.stargazerCount }}</span>
         </div>
       </div>
     </div>
@@ -38,7 +45,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    repo: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  mounted() {
+    console.log('repo here', this.repo)
+  },
+}
 </script>
 
 <style style="scss">
@@ -55,7 +72,7 @@ export default {}
 
     .--meta-language-color {
       @apply w-3 h-3 rounded-full;
-      background-color: gainsboro;
+      /* background-color: gainsboro; */
       display: inline-block;
       margin-right: 0.5em !important;
       position: relative;

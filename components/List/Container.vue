@@ -4,12 +4,19 @@
       <div class="ui-card-view-number"></div>
       <div class="ui-card-view-type"></div>
     </div>
-    <ListItem />
+    <ListItem v-for="repo in repos" :key="repo.id" :repo="repo" />
   </section>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    repos: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
 </script>
 
 <style style="scss">
