@@ -5,10 +5,16 @@ import {
   uniStarMonochrome,
   uniAppsMonochrome,
   uniListUlMonochrome,
+  uniCodeBranch,
 } from 'vue-unicons/dist/icons'
 
 // import 'vue-unicons/dist/vue-unicons-ssr.css'
 
-Unicon.add([uniStarMonochrome, uniAppsMonochrome, uniListUlMonochrome])
+Unicon.add([
+  uniStarMonochrome,
+  uniAppsMonochrome,
+  uniListUlMonochrome,
+  uniCodeBranch,
+])
 
 Vue.use(Unicon)

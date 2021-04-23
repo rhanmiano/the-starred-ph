@@ -38,10 +38,15 @@ export default {
     '@nuxtjs/tailwindcss',
     //
     '@nuxtjs/axios',
+    '@nuxtjs/moment',
   ],
 
   axios: {
     proxy: true,
+  },
+
+  moment: {
+    defaultTimezone: 'Asia/Manila',
   },
 
   proxy: {

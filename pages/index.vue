@@ -86,34 +86,40 @@ export default {
       `bearer ${process.env.GH_GQL_ACCESS_KEY}`
     )
 
-    await this.getRepos('philippines', 100).then(({ data }) => {
-      console.log('getRepos in philippines', data)
+    if (!sessionStorage.getItem('tph-github-repos')) {
+      await this.getRepos('philippines', 100).then(({ data }) => {
+        console.log('getRepos in philippines', data)
 
-      data.search.edges.forEach((edge) => {
-        this.collectedRepos = [
-          ...this.collectedRepos,
-          ...edge.node.repositories.edges.map((repo) => repo.node),
-        ]
+        data.search.edges.forEach((edge) => {
+          this.collectedRepos = [
+            ...this.collectedRepos,
+            ...edge.node.repositories.edges.map((repo) => repo.node),
+          ]
+        })
       })
-    })
 
-    await this.getRepos('ph', 100).then(({ data }) => {
-      console.log('getRepos in ph', data)
+      await this.getRepos('ph', 100).then(({ data }) => {
+        console.log('getRepos in ph', data)
 
-      data.search.edges.forEach((edge) => {
-        this.collectedRepos = [
-          ...this.collectedRepos,
-          ...edge.node.repositories.edges.map((repo) => repo.node),
-        ]
+        data.search.edges.forEach((edge) => {
+          this.collectedRepos = [
+            ...this.collectedRepos,
+            ...edge.node.repositories.edges.map((repo) => repo.node),
+          ]
+        })
       })
-    })
 
-    await console.log('this.collectedRepos', this.collectedRepos)
-    this.repos = orderBy(
-      this.collectedRepos,
-      [(v) => v.stargazerCount],
-      ['desc']
-    ).slice(0, 10)
+      await console.log('this.collectedRepos', this.collectedRepos)
+      this.repos = orderBy(
+        this.collectedRepos,
+        [(v) => v.stargazerCount],
+        ['desc']
+      ).slice(0, 10)
+
+      sessionStorage.setItem('tph-github-repos', JSON.stringify(this.repos))
+    } else {
+      this.repos = JSON.parse(sessionStorage.getItem('tph-github-repos'))
+    }
 
     await console.log('this.repos', this.repos)
   },
