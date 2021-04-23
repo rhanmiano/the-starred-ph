@@ -5,6 +5,8 @@
       <Banner />
       <ListContainer :repos="repos" />
     </main>
+    <AdsRectangular />
+    <Footer />
   </div>
 </template>
 
