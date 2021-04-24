@@ -1,13 +1,8 @@
 <template>
-  <div class="container">
-    <Header />
-    <main class="w-screen m-auto sm:w-3/4">
-      <Banner />
-      <ListContainer :repos="repos" />
-    </main>
-    <AdsRectangular />
-    <Footer />
-  </div>
+  <main class="w-screen m-auto sm:w-3/4">
+    <Banner :title="banner.title" :kicker="banner.kicker" />
+    <ListContainer :repos="repos" />
+  </main>
 </template>
 
 <script>
@@ -79,6 +74,11 @@ export default {
       collectedRepos: [],
       usersCountPhilippines: null,
       usersCountPH: null,
+      banner: {
+        title: 'List of most starred Github repositories in the Philippines',
+        kicker:
+          'Are you a filipino innovator, and ever wondering where to find inspirations and people to follow?',
+      },
     }
   },
   async mounted() {
@@ -147,22 +147,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-ul.nav-wrapper {
-  position: relative;
-  padding-right: 10px;
-  .nav-list {
-    display: inline-block;
-    font-weight: bolder;
-    margin-right: 15px;
-    @apply text-sm font-thin;
-    &.__active {
-      @apply text-blue-400;
-    }
-  }
-}
-header {
-  @apply w-full h-20 flex justify-between content-center px-3 py-2 z-30;
-  color: theme('colors.denotive-highlight');
-}
-</style>
+<style lang="scss"></style>

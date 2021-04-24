@@ -3,7 +3,7 @@
     <div class="ui-card--list-item">
       <div class="--list-item-info">
         <div>
-          <h3 class="--list-item-title">
+          <h4 class="--list-item-title">
             <unicon
               class="self-center mr-1"
               width="15"
@@ -12,7 +12,7 @@
               :fill="'#207fb1'"
             ></unicon
             ><span>{{ repo.owner.login }}</span> / <span>{{ repo.name }}</span>
-          </h3>
+          </h4>
           <p class="--list-item-description">
             {{ repo.description }}
           </p>
