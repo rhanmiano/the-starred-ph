@@ -69,6 +69,9 @@ export default {
   content: {
     markdown: {
       remarkPlugins: [['remark-emoji', { emoticon: true }]],
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css',
+      },
     },
   },
 }

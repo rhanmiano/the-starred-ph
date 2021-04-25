@@ -17,6 +17,7 @@
     "core-js": "^3.9.1",
     "natural-orderby": "^2.0.3",
     "nuxt": "^2.15.3",
+    "prism-themes": "^1.6.0",
     "thousands-counter": "^2.1.0",
     "vue-unicons": "^3.2.1"
   },
