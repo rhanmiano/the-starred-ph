@@ -1,7 +1,9 @@
 <template>
   <main class="w-screen m-auto sm:w-3/4">
     <Banner :title="banner.title" :kicker="banner.kicker" />
-    <article class="bg-white block rounded-md w-full p-8 mt-16 shadow-md">
+    <article
+      class="bg-white block rounded-md w-full p-8 mt-16 shadow-md prose-sm prose-blue"
+    >
       <nuxt-content :document="about" />
     </article>
   </main>
@@ -43,6 +45,31 @@ export default {
 
 .nuxt-content {
   @apply break-words;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5 {
+    font-weight: bold;
+  }
+
+  ol,
+  ul {
+    li {
+      padding-left: 0 !important;
+      margin-left: 2rem;
+    }
+  }
+
+  ul > li {
+    list-style: disc;
+  }
+
+  ol > li {
+    list-style: decimal;
+  }
 
   & h2,
   & h3 {

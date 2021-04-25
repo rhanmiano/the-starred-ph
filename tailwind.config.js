@@ -57,6 +57,7 @@ module.exports = {
         h3: { fontSize: config('theme.fontSize.xl') },
       })
     }),
+    require('@tailwindcss/typography'),
   ],
   purge: false,
 }

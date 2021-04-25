@@ -28,7 +28,7 @@ const GET_REPOS = (location, first) => {
           node {
             __typename
             ... on User {
-              repositories(privacy: PUBLIC, ownerAffiliations: OWNER, isFork: false, orderBy: {field: STARGAZERS, direction: DESC}, first: 2) {
+              repositories(privacy: PUBLIC, ownerAffiliations: OWNER, isFork: false, orderBy: {field: STARGAZERS, direction: DESC}, first: 10) {
                 edges {
                   node {
                     id
