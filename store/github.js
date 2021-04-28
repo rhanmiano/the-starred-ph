@@ -2,12 +2,16 @@ import { GET_REPOS } from '@/gql/github/queries'
 import { orderBy } from 'natural-orderby'
 
 export const state = () => ({
+  topRepos: [],
   collectedRepos: [],
 })
 
 export const mutations = {
-  SET_REPOS(state, repos) {
+  SET_COLLECTED_REPOS(state, repos) {
     state.collectedRepos = [...state.collectedRepos, ...repos]
+  },
+  SET_TOP_REPOS(state, repos) {
+    state.topRepos = repos
   },
 }
 
@@ -34,7 +38,7 @@ export const actions = {
           }
         })
 
-        commit('SET_REPOS', repos)
+        commit('SET_COLLECTED_REPOS', repos)
       })
       .catch((err) => {
         console.log(err)
@@ -42,25 +46,20 @@ export const actions = {
   },
 
   setTopRepos({ commit }, repos) {
-    commit('SET_REPOS', repos)
+    commit('SET_TOP_REPOS', repos)
   },
 }
 
 export const getters = {
   topRepos(state) {
-    return state.collectedRepos.length
+    return state.topRepos && state.topRepos.length
+      ? state.topRepos
+      : state.collectedRepos.length
       ? orderBy(
           state.collectedRepos,
           [(v) => v.stargazerCount],
           ['desc']
         ).slice(0, 10)
       : []
-  },
-  checkStarGazers(state, getters) {
-    console.log(
-      'checkStarGazers',
-      getters.topRepos.map((repo) => repo.stargazerCount)
-    )
-    return getters.topRepos.map((repo) => repo.stargazerCount)
   },
 }
