@@ -17,16 +17,16 @@ export default {
       usersCountPhilippines: null,
       usersCountPH: null,
       banner: {
-        title: 'List of most starred Github repositories in the Philippines',
+        title:
+          'Top 10 most starred Github repositories initiated by developers located in the Philippines',
         kicker:
-          'Are you a filipino innovator, and ever wondering where to find inspirations and people to follow?',
+          'Are you a filipino innovator, and ever wondering where to find inspirations and people to follow? Here comes a list',
       },
     }
   },
   computed: {
     ...mapGetters({
       topRepos: 'github/topRepos',
-      checkStarGazers: 'github/checkStarGazers',
     }),
   },
   async mounted() {
@@ -42,7 +42,6 @@ export default {
       const repos = await JSON.parse(sessionStorage.getItem('tph-github-repos'))
       this.setTopRepos(repos)
     }
-    console.log('collectedRepos', this.$store.state)
   },
   methods: {
     ...mapActions({

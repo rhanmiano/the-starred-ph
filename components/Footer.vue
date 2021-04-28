@@ -81,7 +81,11 @@
     <ul class="sitemap">
       <li><nuxt-link to="/">Home</nuxt-link></li>
       <li><nuxt-link to="/about/">About</nuxt-link></li>
-      <li><nuxt-link to="/contribute/">Contribute</nuxt-link></li>
+      <li>
+        <a href="https://github.com/rhanmiano/the-starred-ph" target="_blank">
+          Contribute
+        </a>
+      </li>
     </ul>
   </footer>
 </template>

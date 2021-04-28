@@ -2,12 +2,19 @@
   <div>
     <div class="trapezoidal-bg"></div>
     <header class="bg-transparent">
-      <div class="self-center pl-6 font-pt-sans font-bold">the starred ph</div>
+      <div class="self-center pl-6 font-pt-sans font-bold">
+        <nuxt-link to="/">the starred ph</nuxt-link>
+      </div>
       <nav class="h-100 self-center">
         <ul class="nav-wrapper flex content-center">
           <li class="nav-list"><nuxt-link to="/about">about</nuxt-link></li>
           <li class="nav-list">
-            <nuxt-link to="/contribute">contribute</nuxt-link>
+            <a
+              href="https://github.com/rhanmiano/the-starred-ph"
+              target="_blank"
+            >
+              contribute
+            </a>
           </li>
         </ul>
       </nav>
