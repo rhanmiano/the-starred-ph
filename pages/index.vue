@@ -1,71 +1,13 @@
 <template>
   <main class="w-screen m-auto sm:w-3/4">
     <Banner :title="banner.title" :kicker="banner.kicker" />
-    <ListContainer :repos="repos" />
+    <ListContainer :repos="topRepos" />
   </main>
 </template>
 
 <script>
-import { orderBy } from 'natural-orderby'
-
-const GET_USER_COUNT = (location) => {
-  return {
-    query: `query {
-      search(type: USER query: "location:${location}" first: 1) {
-        userCount
-      }
-    }`,
-  }
-}
-
-const GET_REPOS = (location, first) => {
-  return {
-    query: `query
-    {
-      search(type: USER, query: "location:${location} sort:followers-desc followers:>=10", first: ${first}) {
-        userCount
-        edges {
-          node {
-            __typename
-            ... on User {
-              repositories(privacy: PUBLIC, ownerAffiliations: OWNER, isFork: false, orderBy: {field: STARGAZERS, direction: DESC}, first: 10) {
-                edges {
-                  node {
-                    id
-                    name
-                    url
-                    description
-                    createdAt
-                    updatedAt
-                    stargazerCount
-                    owner {
-                      ... on User {
-                        avatarUrl
-                        company
-                        location
-                        websiteUrl
-                        name
-                        login
-                        followers(first: 1) {
-                          totalCount
-                        }
-                      }
-                    }
-                    primaryLanguage {
-                      color
-                      name
-                    }
-                  }
-                }
-                totalCount
-              }
-            }
-          }
-        }
-      }
-    }`,
-  }
-}
+// import { orderBy } from 'natural-orderby'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   data() {
@@ -81,68 +23,32 @@ export default {
       },
     }
   },
+  computed: {
+    ...mapGetters({
+      topRepos: 'github/topRepos',
+      checkStarGazers: 'github/checkStarGazers',
+    }),
+  },
   async mounted() {
-    this.$axios.setHeader('content-type', 'application/json')
-    this.$axios.setHeader(
-      'authorization',
-      `bearer ${process.env.GH_GQL_ACCESS_KEY}`
-    )
-
+    // write session storage if not set yet
     if (!sessionStorage.getItem('tph-github-repos')) {
-      await this.getRepos('philippines', 100).then(({ data }) => {
-        console.log('getRepos in philippines', data)
-
-        data.search.edges.forEach((edge) => {
-          this.collectedRepos = [
-            ...this.collectedRepos,
-            ...edge.node.repositories.edges.map((repo) => repo.node),
-          ]
-        })
-      })
-
-      await this.getRepos('ph', 100).then(({ data }) => {
-        console.log('getRepos in ph', data)
-
-        data.search.edges.forEach((edge) => {
-          this.collectedRepos = [
-            ...this.collectedRepos,
-            ...edge.node.repositories.edges.map((repo) => repo.node),
-          ]
-        })
-      })
-
-      await console.log('this.collectedRepos', this.collectedRepos)
-      this.repos = orderBy(
-        this.collectedRepos,
-        [(v) => v.stargazerCount],
-        ['desc']
-      ).slice(0, 10)
-
-      sessionStorage.setItem('tph-github-repos', JSON.stringify(this.repos))
+      await this.getCollectedRepos({ location: 'philippines', first: 100 })
+      await this.getCollectedRepos({ location: 'ph', first: 100 })
+      await sessionStorage.setItem(
+        'tph-github-repos',
+        JSON.stringify(this.topRepos)
+      )
     } else {
-      this.repos = JSON.parse(sessionStorage.getItem('tph-github-repos'))
+      const repos = await JSON.parse(sessionStorage.getItem('tph-github-repos'))
+      this.setTopRepos(repos)
     }
-
-    await console.log('this.repos', this.repos)
+    console.log('collectedRepos', this.$store.state)
   },
   methods: {
-    async getRepos(location, first) {
-      const data = await this.$axios.$post(
-        `${process.env.GH_GQL_API_URL}`,
-        GET_REPOS(location, first)
-      )
-
-      return data
-    },
-
-    async getUserCount(location) {
-      const { data } = await this.$axios.$post(
-        `${process.env.GH_GQL_API_URL}`,
-        GET_USER_COUNT(location)
-      )
-
-      return data
-    },
+    ...mapActions({
+      getCollectedRepos: 'github/getCollectedRepos',
+      setTopRepos: 'github/setTopRepos',
+    }),
   },
 }
 </script>
