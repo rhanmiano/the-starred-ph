@@ -1,5 +1,5 @@
 <template>
-  <main class="w-screen m-auto sm:w-3/4">
+  <main class="w-screen m-auto sm:w-5/6 md:w-3/4">
     <Banner :title="banner.title" :kicker="banner.kicker" />
     <ListContainer :repos="topRepos" />
   </main>

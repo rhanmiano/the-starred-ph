@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-banner text-white text-center pt-9">
+  <div class="ui-banner text-white text-center pt-9 mx-8 sm:mx-0">
     <h1 class="font-bold">
       {{ title }}
     </h1>

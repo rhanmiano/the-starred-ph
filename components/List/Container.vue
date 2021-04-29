@@ -40,16 +40,21 @@ export default {
     display: block;
     width: 100%;
     height: inherit;
-    min-height: 400px;
+    min-height: 1500px;
     margin-top: 100px;
+    @apply px-2;
+
+    @media screen and (min-width: 640px) {
+      @apply px-0;
+    }
   }
 
   &--list {
     @apply flex flex-col flex-wrap;
 
     &-item {
-      @apply bg-white w-full mt-5 py-5 px-8 flex flex-row flex-wrap shadow-md rounded-md;
-      height: 134px;
+      @apply bg-white w-full mt-5 py-5 px-8 flex flex-col md:flex-row flex-wrap shadow-md rounded-md;
+      min-height: 134px;
     }
   }
 }
@@ -88,13 +93,17 @@ export default {
 }
 
 .--list-item-stars {
-  @apply flex flex-wrap items-center justify-end;
-  width: 220px;
+  @apply flex flex-wrap items-center justify-start md:justify-end mt-4 md:mt-0;
+  width: 100%;
+
+  @media screen and (min-width: 640px) {
+    width: 220px;
+  }
 
   .--stars-container {
     @apply flex flex-row flex-wrap items-center border border-brand rounded-md;
     width: 150px;
-    height: 42px;
+    height: 32px;
 
     span.--stars-icon {
       @apply w-14 border-r border-brand flex items-center justify-center h-full;

@@ -31,11 +31,9 @@
               repo.primaryLanguage ? repo.primaryLanguage.name : '--'
             }}</span
             ><span
-              >Created at:
-              {{ $moment(repo.createdAt).format('MMM YYYY') }}</span
+              >Created: {{ $moment(repo.createdAt).format('MMM YYYY') }}</span
             ><span
-              >Last Updated at:
-              {{ $moment(repo.updatedAt).format('MMM YYYY') }}</span
+              >Updated: {{ $moment(repo.updatedAt).format('MMM YYYY') }}</span
             >
           </p>
         </div>
@@ -45,8 +43,8 @@
           <span class="--stars-icon">
             <unicon
               class="self-center mr-1"
-              width="30"
-              height="30"
+              width="20"
+              height="20"
               name="star"
               :fill="'#207fb1'"
               icon-style="monochrome"

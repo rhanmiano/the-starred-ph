@@ -55,17 +55,12 @@ ul.nav-wrapper {
   transform: skew(-45deg, 19deg) translate(-161px, -243px) scale(1.5);
   height: 720px;
   width: 100%;
-}
 
-@media screen and (min-width: 640px) {
-  .trapezoidal-bg {
+  @media screen and (min-width: 640px) {
     transform: skew(-45deg, 19deg) translate(-175px, -190px) scale(1.2);
   }
-}
 
-@media screen and (min-width: 768px) {
-  .trapezoidal-bg {
-    // transform: skew(-45deg, 19deg) translate(-35px, -130px) scale(1.2);
+  @media screen and (min-width: 768px) {
     transform: skew(-45deg, 19deg) translate(-115px, -215px) scale(1.2);
   }
 }
