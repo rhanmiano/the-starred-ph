@@ -4,7 +4,7 @@ import Unicon from 'vue-unicons/dist/vue-unicons-vue2.umd'
 import {
   uniStarMonochrome,
   uniAppsMonochrome,
-  uniListUlMonochrome,
+  uniGridsMonochrome,
   uniCodeBranch,
 } from 'vue-unicons/dist/icons'
 
@@ -13,7 +13,7 @@ import {
 Unicon.add([
   uniStarMonochrome,
   uniAppsMonochrome,
-  uniListUlMonochrome,
+  uniGridsMonochrome,
   uniCodeBranch,
 ])
 

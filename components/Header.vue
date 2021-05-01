@@ -52,7 +52,7 @@ ul.nav-wrapper {
   z-index: -1;
   background: #151d7e;
   background: linear-gradient(190deg, #151d7e 20%, #207fb1 130%);
-  transform: skew(-45deg, 19deg) translate(-161px, -243px) scale(1.5);
+  // transform: skew(-45deg, 19deg) translate(-161px, -243px) scale(1.5);
   height: 720px;
   width: 100%;
 

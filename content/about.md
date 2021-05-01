@@ -14,7 +14,7 @@ In the ever growing horizon of people and set of technologies available in the d
 
 The project aims to be a station for fellow pinoy developers and their projects to be promoted, so that others may see it as well. And for starters, who might be curious of what other tech craftsmen do at their spare time and what frameworks do they use.
 
-If you like their work, do not forget to hit the ⭐ button on their project repository.
+If you like their work, do not forget to hit the ⭐ &nbsp;button on their project repository.
 </span>
 
 ## Inspirations

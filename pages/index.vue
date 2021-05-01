@@ -20,7 +20,7 @@ export default {
         title:
           'Top 10 most starred Github repositories initiated by developers located in the Philippines',
         kicker:
-          'Are you a filipino innovator, and ever wondering where to find inspirations and people to follow? Here comes a list',
+          'Are you a filipino innovator, and wondering where to find inspirations and people to follow? Here comes a list',
       },
     }
   },

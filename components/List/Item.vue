@@ -30,10 +30,10 @@
             ><span>{{
               repo.primaryLanguage ? repo.primaryLanguage.name : '--'
             }}</span
-            ><span
-              >Created: {{ $moment(repo.createdAt).format('MMM YYYY') }}</span
-            ><span
-              >Updated: {{ $moment(repo.updatedAt).format('MMM YYYY') }}</span
+            ><span title="Created at"
+              >CA: {{ $moment(repo.createdAt).format('MMM YYYY') }}</span
+            ><span title="Updated at"
+              >UA: {{ $moment(repo.updatedAt).format('MMM YYYY') }}</span
             >
           </p>
         </div>
@@ -42,16 +42,16 @@
         <div class="--stars-container">
           <span class="--stars-icon">
             <unicon
-              class="self-center mr-1"
-              width="20"
-              height="20"
+              class="self-center"
+              :width="innerWidth < 768 ? 14 : 20"
+              :height="innerWidth < 768 ? 14 : 20"
               name="star"
               :fill="'#207fb1'"
               icon-style="monochrome"
             ></unicon> </span
-          ><span class="--stars-count">{{
-            stargazerCount ? stargazerCount : repo.stargazerCount
-          }}</span>
+          ><span class="--stars-count"
+            >{{ stargazerCount ? stargazerCount : repo.stargazerCount }}
+          </span>
         </div>
       </div>
     </div>
@@ -68,6 +68,12 @@ export default {
       default: () => {},
     },
   },
+
+  data() {
+    return {
+      innerWidth: window.innerWidth,
+    }
+  },
   computed: {
     stargazerCount() {
       return this.repo.stargazerCount > 9999
@@ -78,8 +84,21 @@ export default {
         : this.repo.stargazerCount
     },
   },
+
   mounted() {
-    console.log('repo here', this.repo)
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
+
+  methods: {
+    onResize() {
+      this.innerWidth = window.innerWidth
+    },
   },
 }
 </script>
