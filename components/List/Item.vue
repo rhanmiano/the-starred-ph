@@ -10,8 +10,35 @@
               height="15"
               name="code-branch"
               :fill="'#207fb1'"
-            ></unicon
-            ><span>{{ repo.owner.login }}</span> / <span>{{ repo.name }}</span>
+            ></unicon>
+            <template v-if="$store.state.window.innerWidth >= 768">
+              <span
+                v-popover.top="{
+                  name: listId,
+                }"
+                class="--link cursor-pointer"
+                :data-name="listId"
+                >{{ repo.owner.login }}</span
+              >
+            </template>
+            <template v-else>
+              <span
+                class="--link cursor-pointer"
+                :data-name="listId"
+                @click="$modal.show(listId)"
+                >{{ repo.owner.login }}</span
+              >
+            </template>
+            /
+            <span>
+              <a
+                class="--link"
+                :href="repo.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ repo.name }}
+              </a>
+            </span>
           </h4>
           <p class="--list-item-description">
             {{ repo.description }}
@@ -43,8 +70,8 @@
           <span class="--stars-icon">
             <unicon
               class="self-center"
-              :width="innerWidth < 768 ? 14 : 20"
-              :height="innerWidth < 768 ? 14 : 20"
+              :width="$store.state.window.innerWidth < 768 ? 14 : 20"
+              :height="$store.state.window.innerWidth < 768 ? 14 : 20"
               name="star"
               :fill="'#207fb1'"
               icon-style="monochrome"
@@ -55,11 +82,30 @@
         </div>
       </div>
     </div>
+
+    <!-- Popover or modal to show profile -->
+    <template v-if="$store.state.window.innerWidth >= 768">
+      <popover :name="listId" :width="400">
+        <ListProfile :repoId="repo.id" :profile="repo.owner" />
+      </popover>
+    </template>
+
+    <template v-else>
+      <t-modal
+        footerClass="px-6 py-3 border-t flex flex-row-reverse bg-white"
+        class="--modal-profile"
+        transition="fade"
+        :name="listId"
+      >
+        <ListProfile :repoId="repo.id" :profile="repo.owner" />
+      </t-modal>
+    </template>
   </div>
 </template>
 
 <script>
 import tc from 'thousands-counter'
+import { mapState } from 'vuex'
 
 export default {
   props: {
@@ -71,10 +117,14 @@ export default {
 
   data() {
     return {
-      innerWidth: window.innerWidth,
+      localInnerWidth: window.innerWidth,
+      listId: `${this.repo.id}-${this.repo.owner.id}-github-profile`,
     }
   },
   computed: {
+    ...mapState({
+      cInnerWidth: 'window/innerWidth',
+    }),
     stargazerCount() {
       return this.repo.stargazerCount > 9999
         ? tc(this.repo.stargazerCount, {
@@ -82,22 +132,6 @@ export default {
             uppercase: false,
           })
         : this.repo.stargazerCount
-    },
-  },
-
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize)
-  },
-
-  methods: {
-    onResize() {
-      this.innerWidth = window.innerWidth
     },
   },
 }

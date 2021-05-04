@@ -1,6 +1,6 @@
 <template>
   <section class="ui-card--container">
-    <div class="ui-card-utilities">
+    <!-- <div class="ui-card-utilities">
       <div class="ui-card-view-number"></div>
       <div class="ui-card-view-type">
         <div
@@ -32,7 +32,7 @@
           ></unicon>
         </div>
       </div>
-    </div>
+    </div> -->
     <div v-if="repos.length > 0">
       <transition-group name="list" tag="section">
         <ListItem v-for="repo in repos" :key="repo.id" :repo="repo" />

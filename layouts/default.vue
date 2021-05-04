@@ -6,7 +6,55 @@
     <Footer />
   </div>
 </template>
+<script>
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState({
+      innerWidth: 'window/innerWidth',
+      innerHeight: 'window/innerHeight',
+    }),
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
 
+    console.log(`innerWidth ${innerWidth}, innerHeight ${innerHeight}`)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
+
+  methods: {
+    onResize() {
+      const innerWidth = window.innerWidth
+      const innerHeight = window.innerHeight
+
+      this.$store.dispatch('window/onResize', { innerWidth, innerHeight })
+
+      const elPopover = document.querySelector(
+        "[data-popover$='-github-profile']"
+      )
+
+      const elModal = document.querySelector('.--modal-profile button')
+
+      // hide active popover
+      if (elPopover) {
+        const attr = elPopover.dataset.popover
+        const span = document.querySelector(`span[data-name='${attr}']`)
+        span.click()
+      }
+
+      // hide active modal
+      if (elModal) {
+        elModal.click()
+      }
+    },
+  },
+}
+</script>
 <style>
 /** Default layout global styles */
 *,

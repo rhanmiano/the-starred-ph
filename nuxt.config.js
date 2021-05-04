@@ -25,6 +25,8 @@ export default {
   plugins: [
     { src: '@plugins/vue-unicons', mode: 'client' },
     { src: '@plugins/helper', mode: 'client' },
+    { src: '@plugins/vue-js-popover', mode: 'client' },
+    { src: '@plugins/vue-tailwind', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

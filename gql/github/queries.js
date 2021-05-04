@@ -30,6 +30,8 @@ export const GET_REPOS = (location, first) => {
                     stargazerCount
                     owner {
                       ... on User {
+                        id
+                        bio
                         avatarUrl
                         company
                         location
@@ -37,6 +39,9 @@ export const GET_REPOS = (location, first) => {
                         name
                         login
                         followers(first: 1) {
+                          totalCount
+                        }
+                        following(first: 1) {
                           totalCount
                         }
                       }

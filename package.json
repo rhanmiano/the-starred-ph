@@ -19,6 +19,8 @@
     "nuxt": "^2.15.3",
     "prism-themes": "^1.6.0",
     "thousands-counter": "^2.1.0",
+    "vue-js-popover": "^1.2.1",
+    "vue-tailwind": "^2.2.1",
     "vue-unicons": "^3.2.1"
   },
   "devDependencies": {

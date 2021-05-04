@@ -6,6 +6,8 @@ import {
   uniAppsMonochrome,
   uniGridsMonochrome,
   uniCodeBranch,
+  uniUserLocation,
+  uniChatBubbleUser,
 } from 'vue-unicons/dist/icons'
 
 // import 'vue-unicons/dist/vue-unicons-ssr.css'
@@ -15,6 +17,8 @@ Unicon.add([
   uniAppsMonochrome,
   uniGridsMonochrome,
   uniCodeBranch,
+  uniUserLocation,
+  uniChatBubbleUser,
 ])
 
 Vue.use(Unicon)

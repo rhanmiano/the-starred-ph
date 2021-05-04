@@ -68,11 +68,11 @@ h4 {
   }
 }
 
-.external-link {
-  @apply text-brand-n2 transition duration-200 font-normal;
-  text-decoration: underline;
+.--link {
+  @apply transition duration-200;
+
   &:hover {
-    @apply text-layout-main-black;
+    @apply text-brand;
   }
 }
 

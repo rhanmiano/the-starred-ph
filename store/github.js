@@ -17,7 +17,6 @@ export const mutations = {
 
 export const actions = {
   async getCollectedRepos({ commit }, { location, first }) {
-    console.log('first', location, first)
     let repos = []
     this.$axios.setHeader('content-type', 'application/json')
     this.$axios.setHeader(
@@ -30,10 +29,15 @@ export const actions = {
         console.log(`getRepos in ${location}`, data)
 
         data.search.edges.forEach((edge) => {
-          if (edge.node.repositories.totalCount > 0) {
+          const repoCount = edge.node.repositories.totalCount
+          if (repoCount > 0) {
             repos = [
               ...repos,
-              ...edge.node.repositories.edges.map((repo) => repo.node),
+              ...edge.node.repositories.edges.map((repo) => {
+                repo.node.owner.repoCount = repoCount
+
+                return repo.node
+              }),
             ]
           }
         })
