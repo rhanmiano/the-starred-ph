@@ -1,0 +1,12 @@
+form {
+  @apply text-sm relative;
+
+  .form-input {
+    @apply w-full px-4 py-3 border  border-blue-400 rounded;
+    height: 42px !important;
+
+    &:focus {
+      @apply outline-none border-brand;
+    }
+  }
+}

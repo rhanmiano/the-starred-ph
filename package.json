@@ -11,14 +11,25 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@nuxt/content": "^1.14.0",
+    "@nuxtjs/axios": "^5.13.1",
+    "@tailwindcss/typography": "^0.4.0",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "natural-orderby": "^2.0.3",
+    "nuxt": "^2.15.3",
+    "prism-themes": "^1.6.0",
+    "thousands-counter": "^2.1.0",
+    "vue-js-popover": "^1.2.1",
+    "vue-tailwind": "^2.2.1",
+    "vue-unicons": "^3.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/tailwindcss": "^4.0.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.22.0",
@@ -26,7 +37,10 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
+    "fibers": "^5.0.0",
     "postcss": "^8.2.8",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "sass": "^1.32.10",
+    "sass-loader": "^10.1.1"
   }
 }
