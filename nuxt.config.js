@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'the-starred-ph',
+    title: 'The Starred PH',
     htmlAttrs: {
       lang: 'en',
     },
@@ -38,7 +38,6 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    //
     '@nuxtjs/axios',
     '@nuxtjs/moment',
   ],
@@ -49,11 +48,6 @@ export default {
 
   moment: {
     defaultTimezone: 'Asia/Manila',
-  },
-
-  proxy: {
-    '/gh-graphql/':
-      process.env.GH_GQL_API_URL || 'https://api.github.com/graphql',
   },
 
   env: {

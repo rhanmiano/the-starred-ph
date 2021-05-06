@@ -32,19 +32,6 @@ export default {
 </script>
 
 <style lang="scss">
-ul.nav-wrapper {
-  position: relative;
-  padding-right: 10px;
-  .nav-list {
-    display: inline-block;
-    margin-right: 15px;
-    @apply text-sm;
-    &.__active {
-      @apply text-blue-400;
-    }
-  }
-}
-
 .trapezoidal-bg {
   position: absolute;
   top: 0;

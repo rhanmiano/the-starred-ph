@@ -38,6 +38,7 @@ export const GET_REPOS = (location, first) => {
                         websiteUrl
                         name
                         login
+                        url
                         followers(first: 1) {
                           totalCount
                         }

@@ -5,7 +5,6 @@ export const state = () => ({
 
 export const mutations = {
   ON_RESIZE(state, { innerWidth, innerHeight }) {
-    console.log(`mutate innerWidth: ${innerWidth}, innerHeight: ${innerHeight}`)
     state.innerWidth = innerWidth
     state.innerHeight = innerHeight
   },
@@ -19,9 +18,6 @@ export const mutations = {
 
 export const actions = {
   onResize({ commit }, { innerWidth, innerHeight }) {
-    console.log(
-      `commiting change to innerWidth: ${innerWidth}, innerHeight: ${innerHeight}`
-    )
     commit('ON_RESIZE', { innerWidth, innerHeight })
   },
 }

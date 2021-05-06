@@ -16,11 +16,10 @@ export default {
     }),
   },
   mounted() {
+    this.onResize()
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize)
     })
-
-    console.log(`innerWidth ${innerWidth}, innerHeight ${innerHeight}`)
   },
 
   beforeDestroy() {
@@ -71,9 +70,14 @@ ul.nav-wrapper {
     display: inline-block;
     font-weight: bolder;
     margin-right: 15px;
-    @apply text-sm font-thin;
+    @apply text-xs;
+    transition: opacity 200ms ease-out;
     &.__active {
       @apply text-blue-400;
+    }
+
+    &:hover {
+      @apply opacity-50;
     }
   }
 }

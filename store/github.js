@@ -26,8 +26,6 @@ export const actions = {
     await this.$axios
       .$post(`${process.env.GH_GQL_API_URL}`, GET_REPOS(location, first))
       .then(({ data }) => {
-        console.log(`getRepos in ${location}`, data)
-
         data.search.edges.forEach((edge) => {
           const repoCount = edge.node.repositories.totalCount
           if (repoCount > 0) {

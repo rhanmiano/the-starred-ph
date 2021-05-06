@@ -3,7 +3,7 @@
     <h1 class="font-bold">
       {{ title }}
     </h1>
-    <p class="text-denotive-highlight font-thin">
+    <p class="text-denotive-highlight">
       {{ kicker }}
     </p>
   </div>

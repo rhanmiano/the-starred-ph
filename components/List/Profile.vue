@@ -12,12 +12,18 @@
         />
       </div>
       <div class="flex-grow">
-        <h4 class="m-0">{{ profile.name }}</h4>
+        <a
+          class="--link"
+          :href="profile.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><h4 class="m-0 font-bold">{{ profile.name }}</h4></a
+        >
         <p class="text-xs">{{ profile.login }}</p>
       </div>
     </div>
     <div class="flex flex-wrap flex-col pb-2 text-xs">
-      <p class="flex" v-if="profile && profile.location">
+      <p v-if="profile && profile.location" class="flex">
         <unicon
           class="self-center mr-2"
           width="15"
@@ -27,7 +33,7 @@
         ></unicon>
         {{ profile.location }}
       </p>
-      <p class="flex mt-1" v-if="profile && profile.websiteUrl">
+      <p v-if="profile && profile.websiteUrl" class="flex mt-1">
         <unicon
           class="self-center mr-2"
           width="15"
@@ -69,9 +75,6 @@ export default {
       type: String,
       default: () => '',
     },
-  },
-  mounted() {
-    console.log(this.repoId, this.profile)
   },
 }
 </script>

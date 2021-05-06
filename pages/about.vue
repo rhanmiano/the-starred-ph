@@ -22,7 +22,8 @@ export default {
     return {
       banner: {
         title: 'The Starred PH',
-        kicker: 'See top works of our pinoy developers and creatives',
+        kicker:
+          'See top works of our fellow Filipino developers / creatives / potatoes',
       },
     }
   },

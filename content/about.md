@@ -28,10 +28,10 @@ This project is inspired by the following existing projects:
 
 1. Fetch 100 most followed Github users with "Philippines" indicated in their location.
 2. Users must have at least 10 followers.
-3. List their top 10 repos based on stargazers count. (The project limits the list in to top 10 repositories only, and a user may have the top 10 most starred repository)
+3. List their top 10 repos based on stargazers count. (The project limits the list in to top 10 repositories only for now, and there's a possibility that a user's repositories may fill in one or more slots)
 4. Repository must be public, must be originally owned by the user and is not forked.
 5. Do steps 1 to 4 but with users with "PH" indicated in their location.
-6. Merge all collected repos and sort it from highest stargazer count, and get the top 10.
+6. Merge all collected repos and sort those from highest stargazer count, get the top 10.
 
 ## Contribute
 
