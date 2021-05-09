@@ -1,9 +1,9 @@
 <template>
   <div class="ui-banner text-white text-center pt-9 mx-8 sm:mx-0">
-    <h1 class="font-bold">
+    <h1 class="--title font-bold">
       {{ title }}
     </h1>
-    <p class="text-denotive-highlight">
+    <p class="--kicker text-denotive-highlight">
       {{ kicker }}
     </p>
   </div>

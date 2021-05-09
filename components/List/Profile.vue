@@ -1,17 +1,12 @@
 <template>
   <section class="text-sm">
-    <div class="flex flex-wrap pb-2">
-      <div
+    <figure class="flex flex-wrap pb-2">
+      <img
         class="w-8 h-8 rounded-full bg-gray-200 mr-4"
-        :style="{ backgroundImage: `url(${profile.avatarUrl})` }"
-      >
-        <img
-          class="rounded-full"
-          :src="profile.avatarUrl"
-          :alt="`${profile.name}'s avatar`"
-        />
-      </div>
-      <div class="flex-grow">
+        :src="profile.avatarUrl"
+        :alt="`${profile.name}'s avatar`"
+      />
+      <figcaption class="flex-grow">
         <a
           class="--link"
           :href="profile.url"
@@ -20,8 +15,8 @@
           ><h4 class="m-0 font-bold">{{ profile.name }}</h4></a
         >
         <p class="text-xs">{{ profile.login }}</p>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
     <div class="flex flex-wrap flex-col pb-2 text-xs">
       <p v-if="profile && profile.location" class="flex">
         <unicon

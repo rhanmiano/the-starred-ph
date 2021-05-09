@@ -59,9 +59,6 @@ export default {
       gridViewActive: false,
     }
   },
-  mounted() {
-    console.log('container repos', this.repos.length, this.repos.length)
-  },
   methods: {
     toggleViewType(val) {
       this.viewType = val
