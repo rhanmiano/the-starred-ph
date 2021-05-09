@@ -29,6 +29,5 @@ describe('Header', () => {
     expect(brandLink.attributes('href')).toBe(
       'https://github.com/rhanmiano/the-starred-ph'
     )
-    expect(brandLink.attributes('target')).toBe('_blank')
   })
 })
