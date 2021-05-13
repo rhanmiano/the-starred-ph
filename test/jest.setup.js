@@ -1,7 +1,17 @@
-import Vue from 'vue'
 import { config } from '@vue/test-utils'
 
-// Mock Nuxt components
 config.stubs['nuxt-link'] = {
   template: '<a><slot /></a>',
+}
+
+config.stubs['t-modal'] = {
+  template: '<div class="--modal-profile"><slot /></div>',
+}
+
+config.stubs['unicon'] = {
+  template: '<div class="unicon"><slot /></div>',
+}
+
+config.stubs['popover'] = {
+  template: '<div class="popover"><slot /></div>',
 }

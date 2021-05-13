@@ -16,14 +16,16 @@
                 v-popover.top="{
                   name: listId,
                 }"
-                class="--link cursor-pointer"
+                data-test="popover"
+                class="--link cursor-pointer name-popover"
                 :data-name="listId"
                 >{{ repo.owner.login }}</span
               >
             </template>
             <template v-else>
               <span
-                class="--link cursor-pointer"
+                class="--link cursor-pointer name-popover"
+                data-test="modal-popover"
                 :data-name="listId"
                 @click="$modal.show(listId)"
                 >{{ repo.owner.login }}</span
@@ -105,7 +107,6 @@
 
 <script>
 import tc from 'thousands-counter'
-import { mapState } from 'vuex'
 
 export default {
   props: {
@@ -117,14 +118,10 @@ export default {
 
   data() {
     return {
-      localInnerWidth: window.innerWidth,
       listId: `${this.repo.id}-${this.repo.owner.id}-github-profile`,
     }
   },
   computed: {
-    ...mapState({
-      cInnerWidth: 'window/innerWidth',
-    }),
     stargazerCount() {
       return this.repo.stargazerCount > 9999
         ? tc(this.repo.stargazerCount, {
