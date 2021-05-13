@@ -34,7 +34,7 @@
             /
             <span>
               <a
-                class="--link"
+                class="--link --item-repo-name"
                 :href="repo.url"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,8 +77,10 @@
               name="star"
               :fill="'#207fb1'"
               icon-style="monochrome"
-            ></unicon> </span
-          ><span class="--stars-count"
+            >
+            </unicon>
+          </span>
+          <span class="--stars-count"
             >{{ stargazerCount ? stargazerCount : repo.stargazerCount }}
           </span>
         </div>

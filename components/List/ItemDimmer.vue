@@ -14,14 +14,16 @@
         <div class="--stars-container" style="border-color: gainsboro">
           <span class="--stars-icon" style="border-right-color: gainsboro">
             <unicon
-              class="self-center mr-1"
-              width="30"
-              height="30"
+              class="self-center"
+              :width="$store.state.window.innerWidth < 768 ? 14 : 20"
+              :height="$store.state.window.innerWidth < 768 ? 14 : 20"
               name="star"
               :fill="'gainsboro'"
               icon-style="monochrome"
-            ></unicon> </span
-          ><span class="--stars-count"></span>
+            >
+            </unicon>
+          </span>
+          <span class="--stars-count"></span>
         </div>
       </div>
     </div>
