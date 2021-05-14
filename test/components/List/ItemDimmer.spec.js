@@ -1,4 +1,3 @@
-import { mount } from '@vue/test-utils'
 import { createWrapper } from '../../factory'
 import ItemDimmer from '@/components/List/ItemDimmer'
 import Dimmer from '@/components/Dimmer'

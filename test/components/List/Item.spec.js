@@ -3,8 +3,9 @@ import Popover from 'vue-js-popover'
 import Item from '@/components/List/Item'
 import ListProfile from '@/components/List/Profile'
 import { initState } from '../../store/mock.window'
-import { repo } from '../../mocks.data'
+import { getRepo } from '../../mocks.data'
 
+const repo = getRepo()
 const localVue = createLocalVue()
 localVue.use(Popover)
 

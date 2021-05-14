@@ -12,10 +12,6 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      repos: [],
-      collectedRepos: [],
-      usersCountPhilippines: null,
-      usersCountPH: null,
       banner: {
         title:
           'Top 10 most starred Github repositories initiated by developers located in the Philippines',
