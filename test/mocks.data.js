@@ -34,14 +34,11 @@ export const getRepo = () => {
   }
 }
 
-export const getRepos = (num = 10) => {
+export const getRepos = (size = 10) => {
   let repos = []
-  console.log('herherhehre')
-  for (let i = 0; i < num.length; i++) {
+  for (let i = 0; i < size; i++) {
     const repo = getRepo()
-    console.log('repo', repo)
     repos.push(repo)
   }
-  console.log('repos', repos)
   return repos
 }
