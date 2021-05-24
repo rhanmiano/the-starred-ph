@@ -16,14 +16,16 @@
                 v-popover.top="{
                   name: listId,
                 }"
-                class="--link cursor-pointer"
+                data-test="popover"
+                class="--link cursor-pointer name-popover"
                 :data-name="listId"
                 >{{ repo.owner.login }}</span
               >
             </template>
             <template v-else>
               <span
-                class="--link cursor-pointer"
+                class="--link cursor-pointer name-popover"
+                data-test="modal-popover"
                 :data-name="listId"
                 @click="$modal.show(listId)"
                 >{{ repo.owner.login }}</span
@@ -32,7 +34,7 @@
             /
             <span>
               <a
-                class="--link"
+                class="--link --item-repo-name"
                 :href="repo.url"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -45,24 +47,27 @@
           </p>
         </div>
         <div class="--list-item-meta">
-          <p>
-            <span
-              class="--meta-language-color"
-              :style="{
-                backgroundColor: repo.primaryLanguage
-                  ? repo.primaryLanguage.color
-                  : 'gainsboro',
-              }"
-            ></span
-            ><span>{{
-              repo.primaryLanguage ? repo.primaryLanguage.name : '--'
-            }}</span
-            ><span title="Created at"
-              >CA: {{ $moment(repo.createdAt).format('MMM YYYY') }}</span
-            ><span title="Updated at"
-              >UA: {{ $moment(repo.updatedAt).format('MMM YYYY') }}</span
-            >
-          </p>
+          <div>
+            <span class="flex">
+              <span
+                class="--meta-language-color"
+                :style="{
+                  backgroundColor: repo.primaryLanguage
+                    ? repo.primaryLanguage.color
+                    : 'gainsboro',
+                }"
+              ></span>
+              <span>{{
+                repo.primaryLanguage ? repo.primaryLanguage.name : '--'
+              }}</span>
+            </span>
+            <span title="Created at">
+              Created: {{ $moment(repo.createdAt).format('MMM YYYY') }}
+            </span>
+            <span title="Updated at">
+              Updated: {{ $moment(repo.updatedAt).format('MMM YYYY') }}
+            </span>
+          </div>
         </div>
       </div>
       <div class="--list-item-stars">
@@ -75,8 +80,10 @@
               name="star"
               :fill="'#207fb1'"
               icon-style="monochrome"
-            ></unicon> </span
-          ><span class="--stars-count"
+            >
+            </unicon>
+          </span>
+          <span class="--stars-count"
             >{{ stargazerCount ? stargazerCount : repo.stargazerCount }}
           </span>
         </div>
@@ -105,10 +112,13 @@
 
 <script>
 import tc from 'thousands-counter'
-import { mapState } from 'vuex'
 
 export default {
   props: {
+    repoIndex: {
+      type: Number,
+      default: 0,
+    },
     repo: {
       type: Object,
       default: () => {},
@@ -117,14 +127,11 @@ export default {
 
   data() {
     return {
-      localInnerWidth: window.innerWidth,
       listId: `${this.repo.id}-${this.repo.owner.id}-github-profile`,
+      numStarGazerCount: this.repo.stargazerCount,
     }
   },
   computed: {
-    ...mapState({
-      cInnerWidth: 'window/innerWidth',
-    }),
     stargazerCount() {
       return this.repo.stargazerCount > 9999
         ? tc(this.repo.stargazerCount, {

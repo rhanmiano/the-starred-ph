@@ -23,12 +23,7 @@
 </template>
 
 <script>
-export default {
-  name: 'Header',
-  data() {
-    return {}
-  },
-}
+export default {}
 </script>
 
 <style lang="scss">

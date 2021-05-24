@@ -1,13 +1,21 @@
 <template>
   <footer class="my-16 text-center text-xs text-layout-main-black mt-12">
+    <p class="mb-2">
+      <strong>
+        <a
+          class="--link"
+          href="https://github.com/rhanmiano/the-starred-ph"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          the starred ph
+        </a>
+      </strong>
+    </p>
     <p>
       <span>
-        {{ today }} -
-        <strong>
-          <a href="https://github.com/rhanmiano/the-starred-ph" target="_blank">
-            the starred ph
-          </a>
-        </strong>
+        &copy; 2021
+        <span v-if="curYear > 2021" class="curyear">- {{ curYear }}</span>
       </span>
       / built with
       <svg
@@ -38,10 +46,18 @@
       </svg>
       / by
       <strong>
-        <a href="https://rhanmiano.me" target="_blank">rhanmiano</a>
+        <a
+          class="--link"
+          href="https://rhanmiano.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          >rhanmiano</a
+        >
       </strong>
     </p>
-    <p class="my-4">
+    <hr class="my-4" />
+
+    <p>
       Hosted on
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -79,12 +95,10 @@
       </svg>
     </p>
     <ul class="sitemap">
-      <li><nuxt-link to="/">Home</nuxt-link></li>
-      <li><nuxt-link to="/about/">About</nuxt-link></li>
-      <li>
-        <a href="https://github.com/rhanmiano/the-starred-ph" target="_blank">
-          Contribute
-        </a>
+      <li v-for="item in sitemap" :key="item.text">
+        <a :href="item.link" :target="item.target" :rel="item.rel">{{
+          item.text
+        }}</a>
       </li>
     </ul>
   </footer>
@@ -94,7 +108,17 @@
 export default {
   data() {
     return {
-      today: new Date().getFullYear(),
+      curYear: new Date().getFullYear(),
+      sitemap: [
+        { link: '/', text: 'Home', target: '', rel: '' },
+        { link: '/about', text: 'About', target: '', rel: '' },
+        {
+          link: 'https://github.com/rhanmiano/the-starred-ph',
+          text: 'Home',
+          target: '_blank',
+          rel: '',
+        },
+      ],
     }
   },
 }
