@@ -15,3 +15,7 @@ config.stubs['unicon'] = {
 config.stubs['popover'] = {
   template: '<div class="popover"><slot /></div>',
 }
+
+config.stubs['nuxt-content'] = {
+  template: '<div class="nuxt-content-container"><slot /></div>',
+}
