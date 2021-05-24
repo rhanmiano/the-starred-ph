@@ -27,15 +27,17 @@ export default {
   },
   async mounted() {
     // write session storage if not set yet
-    if (!sessionStorage.getItem('tph-github-repos')) {
+    if (!sessionStorage.getItem(process.env.SESSION_KEY_NAME)) {
       await this.getCollectedRepos({ location: 'philippines', first: 100 })
       await this.getCollectedRepos({ location: 'ph', first: 100 })
       await sessionStorage.setItem(
-        'tph-github-repos',
+        process.env.SESSION_KEY_NAME,
         JSON.stringify(this.topRepos)
       )
     } else {
-      const repos = await JSON.parse(sessionStorage.getItem('tph-github-repos'))
+      const repos = await JSON.parse(
+        sessionStorage.getItem(process.env.SESSION_KEY_NAME)
+      )
       this.setTopRepos(repos)
     }
   },
