@@ -47,24 +47,27 @@
           </p>
         </div>
         <div class="--list-item-meta">
-          <p>
-            <span
-              class="--meta-language-color"
-              :style="{
-                backgroundColor: repo.primaryLanguage
-                  ? repo.primaryLanguage.color
-                  : 'gainsboro',
-              }"
-            ></span
-            ><span>{{
-              repo.primaryLanguage ? repo.primaryLanguage.name : '--'
-            }}</span
-            ><span title="Created at"
-              >CA: {{ $moment(repo.createdAt).format('MMM YYYY') }}</span
-            ><span title="Updated at"
-              >UA: {{ $moment(repo.updatedAt).format('MMM YYYY') }}</span
-            >
-          </p>
+          <div>
+            <span class="flex">
+              <span
+                class="--meta-language-color"
+                :style="{
+                  backgroundColor: repo.primaryLanguage
+                    ? repo.primaryLanguage.color
+                    : 'gainsboro',
+                }"
+              ></span>
+              <span>{{
+                repo.primaryLanguage ? repo.primaryLanguage.name : '--'
+              }}</span>
+            </span>
+            <span title="Created at">
+              Created: {{ $moment(repo.createdAt).format('MMM YYYY') }}
+            </span>
+            <span title="Updated at">
+              Updated: {{ $moment(repo.updatedAt).format('MMM YYYY') }}
+            </span>
+          </div>
         </div>
       </div>
       <div class="--list-item-stars">
@@ -112,6 +115,10 @@ import tc from 'thousands-counter'
 
 export default {
   props: {
+    repoIndex: {
+      type: Number,
+      default: 0,
+    },
     repo: {
       type: Object,
       default: () => {},
@@ -121,7 +128,7 @@ export default {
   data() {
     return {
       listId: `${this.repo.id}-${this.repo.owner.id}-github-profile`,
-      numStarGazerCount: this.repo.stargazerCount
+      numStarGazerCount: this.repo.stargazerCount,
     }
   },
   computed: {

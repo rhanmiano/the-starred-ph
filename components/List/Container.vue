@@ -36,7 +36,12 @@
     </div> -->
     <div v-if="repos.length > 0">
       <transition-group name="list" tag="section">
-        <ListItem v-for="repo in repos" :key="repo.id" :repo="repo" />
+        <ListItem
+          v-for="(repo, id) in repos"
+          :key="repo.id"
+          :repoIndex="id"
+          :repo="repo"
+        />
       </transition-group>
     </div>
     <div v-if="repos.length == 0">
@@ -138,20 +143,25 @@ export default {
   }
 
   .--list-item-meta {
-    @apply text-xs mt-3 font-light opacity-70;
+    @apply text-xs mt-3 font-light opacity-70 w-full;
     color: #7c7c7c;
 
-    > p > span {
+    > div {
+      @apply flex flex-wrap flex-row;
+    }
+
+    > div > span {
       margin-right: 2em;
+      @apply w-full md:w-max;
     }
 
     .--meta-language-color {
-      @apply w-3 h-3 rounded-full;
-      /* background-color: gainsboro; */
+      border-radius: 1px;
+      width: 0.3rem;
+      height: 1rem;
       display: inline-block;
-      margin-right: 0.5em !important;
+      margin-right: 0.4em !important;
       position: relative;
-      top: 2px;
     }
   }
 }
