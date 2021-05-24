@@ -1,5 +1,6 @@
 <template>
   <section class="ui-card--container">
+    <!-- Toggle view, commented out temporarily -->
     <!-- <div class="ui-card-utilities">
       <div class="ui-card-view-number"></div>
       <div class="ui-card-view-type">

@@ -121,6 +121,7 @@ export default {
   data() {
     return {
       listId: `${this.repo.id}-${this.repo.owner.id}-github-profile`,
+      numStarGazerCount: this.repo.stargazerCount
     }
   },
   computed: {
