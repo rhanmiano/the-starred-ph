@@ -35,14 +35,7 @@
       </div>
     </div> -->
     <div v-if="repos.length > 0">
-      <transition-group name="list" tag="section">
-        <ListItem
-          v-for="(repo, id) in repos"
-          :key="repo.id"
-          :repoIndex="id"
-          :repo="repo"
-        />
-      </transition-group>
+      <transition-group name="list" tag="section"> </transition-group>
     </div>
     <div v-if="repos.length == 0">
       <ListItemDimmer v-for="{ index } in placeholder" :key="index" />
