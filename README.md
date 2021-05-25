@@ -57,4 +57,12 @@ Ideas such as:
 
 ## Contribute
 
-Hi :wave:, thanks for taking some time to read this document. If it happens that you know how to implement any of the ideas discussed above, or have some suggestion on the current look/behavior of the site, or seen some inconsistencies, please feel free to submit an issue and/or create a pull request. Contributions are very welcome in this project.
+Hi :wave:, thanks for taking some time to read this document. If it happens that you know Nuxt and have experience in implementing any of the ideas mentioned above, or have some suggestions on the current look/behavior of the site, or seen some inconsistencies, please feel free to submit an issue and/or create a pull request.
+
+Contributions are very much welcome in this project.
+
+Please see Contributing Guide and Code of Conduct to get started.
+
+## License
+
+This project is licensed under [MIT License](https://github.com/rhanmiano/the-starred-ph/blob/master/LICENSE.md)
