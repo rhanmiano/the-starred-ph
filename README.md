@@ -18,7 +18,7 @@ More details are provided in [content/about.md](https://github.com/rhanmiano/the
 
 ### Nuxt
 
-```javascript
+```bash
 # install dependencies
 $ npm install
 
