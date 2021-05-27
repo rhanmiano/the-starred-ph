@@ -29,4 +29,4 @@ What actually happened.
 
 ### Additional Information
 
-You may include things such as system or packages versions, screenshots and other details that may help the maintainer(s) spot the problem.
+You may include things such as system or packages versions, screenshots and other details that may help the reviewers(s) spot the problem.

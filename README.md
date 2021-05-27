@@ -10,8 +10,8 @@ More details are provided in [content/about.md](https://github.com/rhanmiano/the
 
 ## Objectives
 
-1. Promote fellow pinoy developers and their projects
-2. Learn more about testing and Github actions
+1. Promote fellow Pinoy developers and their projects
+2. Learn more about unit testing and Github actions
 3. Learn how open source community works
 
 ## Setup and Dependencies
@@ -31,6 +31,9 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# run unit tests
+$ npm run test
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
@@ -39,20 +42,33 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 To be able to request to Github's Graphql API, one must secure an [OAuth token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) with the right scopes. Please follow along with this provided [documentation](https://docs.github.com/en/graphql/guides/forming-calls-with-graphql#authenticating-with-graphql).
 
-After the token has been created, create a `.env` file and provide its value to `GH_GQL_ACCESS_KEY`
+### Environment
+
+After the token has been created, make a copy of `.env.sample` file and rename it to `.env` in the project root. Values should be the following:
+
+```bash
+# can be production | develop
+ENVIRONMENT=develop
+
+GH_GQL_API_URL=https://api.github.com/graphql
+GH_GQL_ACCESS_KEY=your-github-access-key-here
+
+# any name here, I named mine tph-github-repos
+SESSION_KEY_NAME=tph-github-repos
+```
 
 ### Rate limit and caching
 
-To avoid excessive calls to Github's Graphql API, query results are being cached to user's browser's session storage.
+To avoid excessive calls to Github's Graphql API, query results are being cached to user's browser using session storage.
 
 ## What's next?
 
-At the moment The Starred PH lists works made in the Github only. The project is eyeing to get lists of top works also in other platforms assuming that the platform has a public facing API.
+At the moment, **The Starred PH** lists works that are made in the Github ecosystem only. The project is eyeing to get lists of top works also in other platforms assuming that those have public facing API.
 
 Ideas such as:
 
 - Most starred artwork in platforms such as Dribbble, Artstation and the likes.
-- Most followed pinoy youtuber, or most viewed video of them.
+- Most followed Pinoy youtuber, or most viewed video of them.
 - And so on, if it can promote our Pinoy creatives.
 
 ## Contribute
@@ -61,7 +77,7 @@ Hi :wave:, thanks for taking some time to read this document. If it happens that
 
 Contributions are very much welcome in this project.
 
-Please see Contributing Guide and Code of Conduct to get started.
+Please see [Contributing Guide]() and [Code of Conduct](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/CODE_OF_CONDUCT.md) to get started.
 
 ## License
 

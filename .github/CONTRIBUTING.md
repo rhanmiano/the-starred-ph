@@ -15,8 +15,8 @@ Please be informed that the author of this project is new to Open Source. If the
 [How can I contribute?](#introduction)
 
 - [Reporting an issue](#reporting-an-issue)
-- [Adding a feature]()
-- [Pull requests]()
+- [Adding a feature](#adding-a-feature)
+- [Pull requests](#pull-requests)
 
 ## Introduction
 
@@ -59,7 +59,6 @@ That is all! Read the remaining sections of this document to get going.
 - **Make sure that the feature is related to what The Starred PH aims to be.**
   - If updates are to be made to the current top most starred Github repositories context, is the feature does not pivots to anything besides showing the most starred repositories, does it supplement the current behaviour?
   - If it is from new platform(see ideas here), is the feature essential to promote our Pinoy developers, creatives and such?
-- **Any contributions such as UI/UX enhancements, or enhancements in some of the documentations** are very much welcome!
 - **Do check the template for feature request provided** to see what are the needed details for the maintainer to consider your feature in mind.
 - **Submit your feature request.**
 
@@ -76,5 +75,7 @@ That is all! Read the remaining sections of this document to get going.
 - `git checkout -b ${prefix}/descriptive-branch-name-here` Checkout to your branch. Prefix it with `feature/` or `fix/`, whatever is applicable to your updates.
 - Code and push your changes.
 - Submit a **pull request**. Please do follow the template for requesting one.
+
+**Any contributions such as UI/UX enhancements, or enhancements in some of the documentations** are very much welcome!
 
 **Let us make this a wonderful experience to us all. Thanks!**
