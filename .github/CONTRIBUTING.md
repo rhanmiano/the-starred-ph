@@ -49,7 +49,7 @@ That is all! Read the remaining sections of this document to get going.
 
 #### If confirmed issue
 
-- **Do check the template for issue(s) provided** to see what are the needed details for the maintainer to consider your reported item.
+- **Do check the provided [template](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/templates/ISSUE_TEMPLATE/bug_report.md) for issue(s)** to see what are the needed details for the maintainer to consider your reported item.
 - **Submit your issue.**
 
 ### Adding a feature
@@ -59,7 +59,7 @@ That is all! Read the remaining sections of this document to get going.
 - **Make sure that the feature is related to what The Starred PH aims to be.**
   - If updates are to be made to the current top most starred Github repositories context, is the feature does not pivots to anything besides showing the most starred repositories, does it supplement the current behaviour?
   - If it is from new platform(see ideas here), is the feature essential to promote our Pinoy developers, creatives and such?
-- **Do check the template for feature request provided** to see what are the needed details for the maintainer to consider your feature in mind.
+- **Do check the provided [template](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/templates/ISSUE_TEMPLATE/feature_request.md) for feature requests** to see what are the needed details for the maintainer to consider your feature in mind.
 - **Submit your feature request.**
 
 ### Pull requests
@@ -71,11 +71,11 @@ That is all! Read the remaining sections of this document to get going.
 - `git fetch && git checkout develop` The `develop` branch will be our starting point, to avoid breaking what's in the `master`
 - `git remote add upstream https://github.com/rhanmiano/the-starred-ph.git` This will allow us to connect to the original remote repository.
 - `git fetch upstream` To fetch upstream branches.
-- `git branch --set-upstream-to=upstream/develop develop` To allow us to pull updates from the original remote develop branch is we wish to.
+- `git branch --set-upstream-to=upstream/develop develop` To allow us to pull updates from the original remote **develop** branch.
 - `git checkout -b ${prefix}/descriptive-branch-name-here` Checkout to your branch. Prefix it with `feature/` or `fix/`, whatever is applicable to your updates.
 - Code and push your changes.
-- Submit a **pull request**. Please do follow the template for requesting one.
+- Submit a **pull request**. Please do follow the [template](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/templates/PULL_REQUEST_TEMPLATE.md) for requesting one.
 
-**Any contributions such as UI/UX enhancements, or enhancements in some of the documentations** are very much welcome!
+**Any contributions such as UI/UX enhancements, or enhancements in some of the documentations are very much welcome!**
 
 **Let us make this a wonderful experience to us all. Thanks!**

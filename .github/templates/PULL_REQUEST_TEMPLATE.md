@@ -21,10 +21,10 @@ Discuss briefly on what the pull request is trying to accomplish
 
 #### Checklist
 
-[ ] Have read the Contributing Guidelines and Code of Conduct
-[ ] Used Conventional Commit messages
-[ ] Created new test cases for new components/pages, and it passes. (if applicable)
-[ ] Existing test cases are all passing.
+- [ ] Have read the Contributing Guidelines and Code of Conduct
+- [ ] Used Conventional Commit messages
+- [ ] Created new test cases for new components/pages, and it passes. (if applicable)
+- [ ] Existing test cases are all passing.
 
 #### Tests
 
@@ -32,4 +32,4 @@ Please provide screenshot of tests.
 
 #### Additional Information
 
-You may include before and after screenshots and other details that may help the reviewers(s) to have a picture of changes made in the pull request.
+You may include **before** and **after** screenshots and other details that may help the reviewers(s) to have a picture of changes made in the pull request.
