@@ -1,23 +1,20 @@
+import { head } from './assets/js/global'
 require('dotenv').config()
+
+/* const tailwind = require('tailwindcss')
+const purgecss = require('@fullhuman/postcss-purgecss')
+
+const postcssPlugins = [tailwind()]
+
+if (process.env.GRIDSOME_ENV === 'production')
+  postcssPlugins.push(purgecss(require('./purgecss.config.js'))) */
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'The Starred PH',
-    htmlAttrs: {
-      lang: 'en',
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  },
-
+  head,
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/scss/main.scss'],
 

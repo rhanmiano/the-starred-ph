@@ -1,4 +1,3 @@
-import { createWrapper } from '../../factory'
 import Popover from 'vue-js-popover'
 
 import { createLocalVue, mount } from '@vue/test-utils'
@@ -21,7 +20,7 @@ const mocks = {
     }
   },
 }
-let options = {
+const options = {
   localVue,
   mocks: {
     ...mocks,

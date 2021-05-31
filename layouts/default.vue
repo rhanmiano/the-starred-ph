@@ -87,15 +87,12 @@ header {
 }
 
 /** List items styles and animation */
-.list-item {
-  display: inline-block;
-  margin-right: 10px;
-}
 .list-enter-active,
 .list-leave-active {
   transition: all 1s;
 }
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+.list-enter,
+.list-leave-to {
   opacity: 0;
   transform: translateY(30px);
 }
