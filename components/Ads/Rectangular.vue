@@ -1,5 +1,7 @@
 <template>
-  <section class="ui-rectangular-ad"></section>
+  <section class="ui-rectangular-ad">
+    <adsbygoogle />
+  </section>
 </template>
 
 <script>
@@ -8,6 +10,11 @@ export default {}
 
 <style style="scss">
 .ui-rectangular-ad {
-  @apply w-full h-32 bg-layout-lc-black block my-8;
+  @apply w-3/4 h-32 block;
+  margin: 2rem auto;
+}
+
+#aswift_1_anchor {
+  margin: 0 auto !important;
 }
 </style>

@@ -31,13 +31,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/axios',
     '@nuxtjs/moment',
-  ].concat(
-    process.env.NODE_ENV !== 'production' ? '@nuxtjs/eslint-module' : []
-  ),
+  ],
 
   axios: {
     proxy: true,
@@ -55,7 +55,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxtjs/google-adsense', '@nuxtjs/gtm'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -65,6 +65,26 @@ export default {
       prism: {
         theme: 'prism-themes/themes/prism-material-oceanic.css',
       },
+    },
+  },
+
+  // Google Adsense config
+  'google-adsense': {
+    id:
+      process.env.ENVIRONMENT == 'production'
+        ? process.env.CA_PUB
+        : 'ca-pub-#########',
+    test: process.env.ENVIRONMENT != 'production',
+  },
+
+  // Google Tag Manager config
+  gtm: {
+    id: 'GTM-XXXXXXX', // Used as fallback if no runtime config is provided
+  },
+
+  publicRuntimeConfig: {
+    gtm: {
+      id: process.env.GOOGLE_TAG_MANAGER_ID,
     },
   },
 }
