@@ -26,7 +26,9 @@
     "thousands-counter": "^2.1.0",
     "vue-js-popover": "^1.2.1",
     "vue-tailwind": "^2.2.1",
-    "vue-unicons": "^3.2.1"
+    "vue-unicons": "^3.2.1",
+    "sass": "^1.32.10",
+    "sass-loader": "^10.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
@@ -49,8 +51,6 @@
     "jest": "^26.6.3",
     "postcss": "^8.2.8",
     "prettier": "^2.2.1",
-    "sass": "^1.32.10",
-    "sass-loader": "^10.1.1",
     "vue-jest": "^3.0.7"
   }
 }
