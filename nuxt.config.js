@@ -37,7 +37,9 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/axios',
     '@nuxtjs/moment',
-  ],
+  ].concat(
+    process.env.NODE_ENV !== 'production' ? '@nuxtjs/eslint-module' : []
+  ),
 
   axios: {
     proxy: true,
@@ -79,7 +81,7 @@ export default {
 
   // Google Tag Manager config
   gtm: {
-    id: 'GTM-XXXXXXX', // Used as fallback if no runtime config is provided
+    id: process.env.GOOGLE_TAG_MANAGER_ID, // Used as fallback if no runtime config is provided
   },
 
   publicRuntimeConfig: {

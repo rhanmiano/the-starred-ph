@@ -34,7 +34,7 @@
         </div>
       </div>
     </div> -->
-    <div v-if="repos.length > 0">
+    <div v-show="repos.length > 0">
       <transition-group name="list" tag="section">
         <ListItem
           v-for="(repo, id) in repos"
@@ -44,7 +44,7 @@
         />
       </transition-group>
     </div>
-    <div v-if="repos.length == 0">
+    <div v-show="repos.length == 0">
       <ListItemDimmer v-for="{ index } in placeholder" :key="index" />
     </div>
   </section>
