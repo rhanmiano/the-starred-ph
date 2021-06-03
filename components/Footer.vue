@@ -114,9 +114,9 @@ export default {
         { link: '/about', text: 'About', target: '', rel: '' },
         {
           link: 'https://github.com/rhanmiano/the-starred-ph',
-          text: 'Home',
+          text: 'Contribute',
           target: '_blank',
-          rel: '',
+          rel: 'noopener noreferrer',
         },
       ],
     }

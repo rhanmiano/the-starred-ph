@@ -1,5 +1,5 @@
 <template>
-  <main class="w-screen m-auto sm:w-3/4">
+  <main class="w-full m-auto sm:w-5/6 md:w-3/4">
     <Banner :title="banner.title" :kicker="banner.kicker" />
     <article
       class="bg-white block rounded-md w-full p-8 mt-16 shadow-md prose-sm prose-blue"

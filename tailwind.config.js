@@ -44,6 +44,13 @@ module.exports = {
     },
     container: {
       center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
     },
   },
   variants: {
@@ -59,5 +66,47 @@ module.exports = {
     }),
     require('@tailwindcss/typography'),
   ],
-  purge: false,
+  purge: {
+    content: [
+      `./public/**/*.html`,
+      './src/**/*.vue',
+      './src/**/*.js',
+      './src/**/*.html',
+      './src/**/*.md',
+    ],
+    // These options are passed through directly to PurgeCSS
+    options: {
+      whitelist: [
+        'body',
+        'html',
+        'img',
+        'a',
+        'nuxt-progress',
+        '__nuxt',
+        '__layout',
+      ],
+      whitelistPatterns: [
+        /-(leave|enter|appear)(|-(to|from|active))$/, // Normal transitions
+        /^nuxt-link(|-exact)-active$/, // Nuxt link classes
+        /^(?!cursor-move).+-move$/, // Move transitions
+        /data-v-.*/, // Keep scoped styles
+      ],
+      extractors: [
+        {
+          extractor: (content) => {
+            const contentWithoutStyleBlocks = content.replace(
+              /<style[^]+?<\/style>/gi,
+              ''
+            )
+            return (
+              contentWithoutStyleBlocks.match(
+                /[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g
+              ) || []
+            )
+          },
+          extensions: ['vue', 'js', 'md', 'html'],
+        },
+      ],
+    },
+  },
 }
