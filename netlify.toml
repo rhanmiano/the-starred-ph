@@ -1,0 +1,20 @@
+[[redirects]]
+  from = "https://starredph.netlify.app/"
+  to = "https://starredph.com/"
+  status = 301
+  force = true
+  conditions = {Language = ["en","es"], Country = ["Philippines"]}
+  [redirects.headers]
+    X-From = "Netlify"
+    
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Referrer-Policy = "strict-origin"
+    Permissions-Policy = "fullscreen=(self)"
+
+    Content-Security-Policy = "default-src 'self' https://starredph.com/:* data:; style-src 'self' *.googleapis.com 'unsafe-inline' *.gstatic.com data:; script-src 'self' https://starredph.com/:* 'unsafe-eval' *.googlesysndication.com *.google.com *.googleapis.com https://unpkg.com 'unsafe-inline' *.cloudfront.net * https://www.googletagmanager.com/ *.googleadservices.com https://www.googletagservices.com/ *.gstatic.com data:; font-src 'self' *.gstatic.com data:; img-src 'self' *.googlesysndication.com *.googleusercontent.com *.gstatic.com data:; connect-src 'self' https://starredph.com:* https://api.github.com data:; frame-src 'self' *.google.com; frame-ancestors 'none';"
