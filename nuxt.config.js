@@ -58,7 +58,10 @@ export default {
   modules: ['@nuxt/content', '@nuxtjs/google-adsense', '@nuxtjs/gtm'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extractCSS: true,
+    transpile: ['vue-tailwind'],
+  },
 
   content: {
     markdown: {
