@@ -25,7 +25,7 @@
     "prism-themes": "^1.6.0",
     "thousands-counter": "^2.1.0",
     "vue-js-popover": "^1.2.1",
-    "vue-tailwind": "^2.2.1",
+    "vue-tailwind": "^0.4.6",
     "vue-unicons": "^3.2.1",
     "sass": "^1.32.10",
     "sass-loader": "^10.1.1"

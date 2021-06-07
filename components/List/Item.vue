@@ -27,7 +27,7 @@
                 class="--link cursor-pointer name-popover"
                 data-test="modal-popover"
                 :data-name="listId"
-                @click="$modal.show(listId)"
+                @click="$refs[`${listId}`].show()"
                 >{{ repo.owner.login }}</span
               >
             </template>
@@ -65,7 +65,7 @@
               Created: {{ $moment(repo.createdAt).format('MMM YYYY') }}
             </span>
             <span title="Updated at">
-              Updated: {{ $moment(repo.updatedAt).format('MMM YYYY') }}
+              Last commit: {{ $moment(repo.pushedAt).format('MMM YYYY') }}
             </span>
           </div>
         </div>
@@ -99,6 +99,7 @@
 
     <template v-else>
       <t-modal
+        :ref="listId"
         footerClass="px-6 py-3 border-t flex flex-row-reverse bg-white"
         class="--modal-profile"
         transition="fade"
@@ -127,7 +128,7 @@ export default {
 
   data() {
     return {
-      listId: `${this.repo.id}-${this.repo.owner.id}-github-profile`,
+      listId: `${this.repo.id}${this.repo.owner.id}`,
       numStarGazerCount: this.repo.stargazerCount,
     }
   },
@@ -141,7 +142,17 @@ export default {
         : this.repo.stargazerCount
     },
   },
+  methods: {
+    showModal() {
+      console.log('asdasdasd')
+      this.$refs[`${this.listId}`].show()
+    },
+  },
 }
 </script>
 
-<style style="scss"></style>
+<style style="scss">
+.--profile-modal-wrapper {
+  min-height: 0 !important;
+}
+</style>

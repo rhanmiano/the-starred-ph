@@ -27,6 +27,7 @@ export const GET_REPOS = (location, first) => {
                     description
                     createdAt
                     updatedAt
+                    pushedAt
                     stargazerCount
                     owner {
                       ... on User {
