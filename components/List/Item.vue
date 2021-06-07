@@ -65,7 +65,7 @@
               Created: {{ $moment(repo.createdAt).format('MMM YYYY') }}
             </span>
             <span title="Updated at">
-              Updated: {{ $moment(repo.updatedAt).format('MMM YYYY') }}
+              Last commit: {{ $moment(repo.pushedAt).format('MMM YYYY') }}
             </span>
           </div>
         </div>
