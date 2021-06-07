@@ -1,5 +1,11 @@
+export const title = 'The Starred PH'
+export const description =
+  'Top 10 most starred Github repositories initiated by developers located in the Philippines'
+export const url = 'https://starredph.com/'
+export const banner = `${url}images/banner.png`
+
 export const head = {
-  title: 'The Starred PH',
+  title,
   htmlAttrs: {
     lang: 'en',
   },
@@ -9,13 +15,83 @@ export const head = {
     {
       hid: 'description',
       name: 'description',
-      content:
-        'Top 10 most starred Github repositories initiated by developers located in the Philippines',
+      content: description,
     },
     {
       hid: 'keywords',
       name: 'keywords',
       content: 'pinoy, github, philippines, most, starred',
+    },
+    {
+      hid: 'og:type',
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      hid: 'og:url',
+      name: 'og:url',
+      content: url,
+    },
+    {
+      hid: 'og:title',
+      name: 'og:title',
+      content: title,
+    },
+    {
+      hid: 'og:description',
+      name: 'og:description',
+      content: description,
+    },
+    {
+      hid: 'og:site_name',
+      name: 'og:site_name',
+      content: title,
+    },
+    {
+      hid: 'og:locale',
+      name: 'og:locale',
+      content: 'en_PH',
+    },
+    {
+      hid: 'og:image',
+      name: 'og:image',
+      content: banner,
+    },
+    {
+      hid: 'og:image:width',
+      name: 'og:image:width',
+      content: '1200',
+    },
+    {
+      hid: 'og:image:height',
+      name: 'og:image:height',
+      content: '628',
+    },
+    // twitter
+    {
+      hid: 'twitter:card',
+      name: 'twitter:card',
+      content: 'summary',
+    },
+    {
+      hid: 'twitter:url',
+      name: 'twitter:url',
+      content: url,
+    },
+    {
+      hid: 'twitter:title',
+      name: 'twitter:title',
+      content: title,
+    },
+    {
+      hid: 'twitter:description',
+      name: 'twitter:description',
+      content: description,
+    },
+    {
+      hid: 'twitter:card',
+      name: 'twitter:card',
+      content: banner,
     },
     {
       hid: 'msapplication-TileColor',
