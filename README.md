@@ -77,7 +77,7 @@ Hi :wave:, thanks for taking some time to read this document. If it happens that
 
 Contributions are very much welcome in this project.
 
-Please see [Contributing Guide]() and [Code of Conduct](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/CODE_OF_CONDUCT.md) to get started.
+Please see [Contributing Guide](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/CONTRIBUTING.md) and [Code of Conduct](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/CODE_OF_CONDUCT.md) to get started.
 
 ## License
 
