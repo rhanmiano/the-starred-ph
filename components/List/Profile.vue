@@ -75,9 +75,8 @@ export default {
 </script>
 
 <style>
-[data-popover$='-github-profile'] {
-  @apply shadow-md p-2;
-  /* width: 300px !important; */
+.vue-popover {
+  @apply shadow-md p-4;
 
   h4 {
     margin: 0 0 0.5rem 0;
