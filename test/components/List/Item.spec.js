@@ -17,11 +17,11 @@ const mocks = {
   },
 }
 
-let options = {
+const options = {
   localVue,
   data() {
     return {
-      listId: `${repo.id}-${repo.owner.id}-github-profile`,
+      listId: `${repo.id}-${repo.owner.id}`,
     }
   },
   propsData: {
@@ -81,12 +81,11 @@ describe('Item', () => {
       mocks: {
         ...mocks,
         $store: { state },
-        $modal: {
-          show: () => jest.fn,
-        },
       },
     })
 
+    const mockShowMethod = jest.fn()
+    wrapper.vm.$refs[`${wrapper.vm.listId}`].show = mockShowMethod
     const username = wrapper.find('.name-popover')
 
     expect(username.exists()).toBe(true)

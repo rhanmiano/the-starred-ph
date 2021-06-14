@@ -142,12 +142,6 @@ export default {
         : this.repo.stargazerCount
     },
   },
-  methods: {
-    showModal() {
-      console.log('asdasdasd')
-      this.$refs[`${this.listId}`].show()
-    },
-  },
 }
 </script>
 
