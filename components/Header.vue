@@ -12,6 +12,7 @@
             <a
               href="https://github.com/rhanmiano/the-starred-ph"
               target="_blank"
+              rel="noopener noreferrer"
             >
               contribute
             </a>

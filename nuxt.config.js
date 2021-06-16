@@ -1,13 +1,5 @@
-import { head } from './assets/js/global'
+import { head } from './config'
 require('dotenv').config()
-
-/* const tailwind = require('tailwindcss')
-const purgecss = require('@fullhuman/postcss-purgecss')
-
-const postcssPlugins = [tailwind()]
-
-if (process.env.GRIDSOME_ENV === 'production')
-  postcssPlugins.push(purgecss(require('./purgecss.config.js'))) */
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target

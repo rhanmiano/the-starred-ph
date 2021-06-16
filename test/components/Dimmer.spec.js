@@ -1,10 +1,10 @@
-import { mount } from '@vue/test-utils'
 import Dimmer from '@/components/Dimmer'
+import { createTestWrapper } from '../factory'
 
 const width = '100px'
 const height = '200px'
 
-const wrapper = mount(Dimmer, {
+const wrapper = createTestWrapper(Dimmer, {
   propsData: {
     width,
     height,

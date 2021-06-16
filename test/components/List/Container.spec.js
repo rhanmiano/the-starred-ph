@@ -6,25 +6,23 @@ import ListItem from '@/components/List/Item'
 import ListItemDimmer from '@/components/List/ItemDimmer'
 import ListProfile from '@/components/List/Profile'
 import Dimmer from '@/components/Dimmer'
-import { initState } from '../../store/mock.window'
+import { createTestWrapper } from '../../factory'
+
+import { initWindow } from '../../store/mock.window'
 import { getRepos } from '../../mocks.data'
 
 const localVue = createLocalVue()
 localVue.use(Popover)
 
-const { state } = initState(768, 1000)
-const mocks = {
-  $moment: () => {
-    return {
-      format: () => jest.fn(),
-    }
-  },
-}
+const { mockWindow } = initWindow(768, 1000)
 const options = {
   localVue,
   mocks: {
-    ...mocks,
-    $store: { state },
+    $store: {
+      state: {
+        window: mockWindow,
+      },
+    },
   },
   stubs: {
     ListItem,
@@ -36,12 +34,12 @@ const options = {
 
 describe('Container', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Container, options)
+    const wrapper = createTestWrapper(Container, options)
     expect(wrapper.vm).toBeTruthy()
   })
 
   it('renders ItemDimmer if repos length is zero', async () => {
-    const wrapper = mount(Container, {
+    const wrapper = createTestWrapper(Container, {
       ...options,
       propsData: {
         repos: [],
@@ -54,7 +52,7 @@ describe('Container', () => {
   it('renders ListItem if repos length is greater than zero', async () => {
     const size = 10
     const repos = getRepos(size)
-    const wrapper = mount(Container, {
+    const wrapper = createTestWrapper(Container, {
       ...options,
       propsData: {
         repos,

@@ -24,7 +24,7 @@
           width="15"
           height="15"
           name="user-location"
-          :fill="'#207fb1'"
+          :fill="$store.state.colors.colors.brand"
         ></unicon>
         {{ profile.location }}
       </p>
@@ -34,7 +34,7 @@
           width="15"
           height="15"
           name="chat-bubble-user"
-          :fill="'#207fb1'"
+          :fill="$store.state.colors.colors.brand"
         ></unicon>
         <a
           class="--link"

@@ -1,8 +1,8 @@
-import { createWrapper } from '../factory'
 import About from '@/pages/about'
 import Banner from '@/components/Banner'
+import { createTestWrapper } from '../factory'
 
-let options = {
+const options = {
   stubs: {
     Banner,
   },
@@ -12,7 +12,7 @@ describe('About', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = createWrapper(About, { ...options })
+    wrapper = createTestWrapper(About, { ...options })
   })
 
   test('is a Vue instance', () => {

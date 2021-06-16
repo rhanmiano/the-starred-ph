@@ -14,7 +14,7 @@
             width="20"
             height="20"
             name="grids"
-            :fill="'#207fb1'"
+            :fill="$store.state.colors.colors.brand"
             icon-style="monochrome"
           ></unicon>
         </div>
@@ -28,7 +28,7 @@
             width="20"
             height="20"
             name="apps"
-            :fill="'#207fb1'"
+            :fill="$store.state.colors.colors.brand"
             icon-style="monochrome"
           ></unicon>
         </div>
@@ -144,7 +144,6 @@ export default {
 
   .--list-item-meta {
     @apply text-xs mt-3 font-light opacity-70 w-full;
-    color: #7c7c7c;
 
     > div {
       @apply flex flex-wrap flex-row;

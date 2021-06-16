@@ -1,7 +1,7 @@
-import { mount } from '@vue/test-utils'
 import Header from '@/components/Header'
+import { createTestWrapper } from '../factory'
 
-const wrapper = mount(Header)
+const wrapper = createTestWrapper(Header)
 
 describe('Header', () => {
   test('is a Vue instance', () => {

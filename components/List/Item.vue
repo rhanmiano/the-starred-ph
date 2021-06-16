@@ -9,7 +9,7 @@
               width="15"
               height="15"
               name="code-branch"
-              :fill="'#207fb1'"
+              :fill="$store.state.colors.colors.brand"
             ></unicon>
             <template v-if="$store.state.window.innerWidth >= 768">
               <span
@@ -78,7 +78,7 @@
               :width="$store.state.window.innerWidth < 768 ? 14 : 20"
               :height="$store.state.window.innerWidth < 768 ? 14 : 20"
               name="star"
-              :fill="'#207fb1'"
+              :fill="$store.state.colors.colors.brand"
               icon-style="monochrome"
             >
             </unicon>

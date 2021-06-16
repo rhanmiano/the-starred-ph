@@ -1,10 +1,10 @@
-import { mount } from '@vue/test-utils'
 import Banner from '@/components/Banner'
+import { createTestWrapper } from '../factory'
 
 const title = 'This is some title'
 const kicker = 'This is some kicker'
 
-const wrapper = mount(Banner, {
+const wrapper = createTestWrapper(Banner, {
   propsData: {
     title,
     kicker,

@@ -1,12 +1,12 @@
-import { createWrapper } from '../../factory'
 import ItemDimmer from '@/components/List/ItemDimmer'
 import Dimmer from '@/components/Dimmer'
-import { initState } from '../../store/mock.window'
+import { createTestWrapper } from '../../factory'
+import { initWindow } from '../../store/mock.window'
 
-const { state } = initState(768, 1000)
-const wrapper = createWrapper(ItemDimmer, {
+const { mockWindow } = initWindow(768, 1000)
+const wrapper = createTestWrapper(ItemDimmer, {
   mocks: {
-    $store: { state },
+    $store: { state: { window: mockWindow } },
   },
   stubs: {
     Dimmer,
