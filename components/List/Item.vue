@@ -3,7 +3,7 @@
     <div class="ui-card--list-item">
       <div class="--list-item-info">
         <div>
-          <h4 class="--list-item-title">
+          <strong class="--list-item-title">
             <unicon
               class="self-center mr-1"
               width="15"
@@ -41,7 +41,7 @@
                 >{{ repo.name }}
               </a>
             </span>
-          </h4>
+          </strong>
           <p class="--list-item-description">
             {{ repo.description }}
           </p>
