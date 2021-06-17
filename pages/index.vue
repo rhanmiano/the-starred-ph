@@ -29,7 +29,7 @@ export default {
     // write session storage if not set yet
     if (!sessionStorage.getItem(process.env.SESSION_KEY_NAME)) {
       await this.getCollectedRepos({ location: 'philippines', first: 100 })
-      await this.getCollectedRepos({ location: 'ph', first: 100 })
+      await this.getCollectedRepos({ location: ',+ph', first: 100 })
       await sessionStorage.setItem(
         process.env.SESSION_KEY_NAME,
         JSON.stringify(this.topRepos)
