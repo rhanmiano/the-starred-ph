@@ -1,6 +1,6 @@
 {
   "name": "the-starred-ph",
-  "description": "Top 10 most starred Github repositories initiated by developers located in the Philippines",
+  "description": "Top 10 most starred Github repositories in the Philippines",
   "repository": "github:rhanmiano/the-starred-ph",
   "author": {
     "name": "Rhan Miano",

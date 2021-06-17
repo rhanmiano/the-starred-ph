@@ -6,7 +6,7 @@ author: Rhan Miano
 
 # The Starred PH
 
-Top 10 most starred Github repositories initiated by developers located in the Philippines
+Top 10 most starred Github repositories in the Philippines
 
 ## Context
 
@@ -36,6 +36,8 @@ This project is inspired by the following existing projects:
 ### Caveats
 
 Since the users' location is free-text, users with cities only or did not indicated their location at all will not be included in the searching. This can be resolved by indicating "Philippines" or "PH" in your location. `e.g. Manila, Philippines or Manila, PH`
+
+Also, repositories that are being searched in the query are created by individual users not by organizations.
 
 ## Contribute
 

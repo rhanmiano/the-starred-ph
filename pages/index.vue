@@ -13,8 +13,7 @@ export default {
   data() {
     return {
       banner: {
-        title:
-          'Top 10 most starred Github repositories initiated by developers located in the Philippines',
+        title: 'Top 10 most starred Github repositories in the Philippines',
         kicker:
           'Are you an innovator and wondering where to find inspirations and people to follow? Here comes a short list',
       },
