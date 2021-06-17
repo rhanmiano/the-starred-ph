@@ -8,16 +8,18 @@ import ListItemDimmer from '@/components/List/ItemDimmer'
 import ListProfile from '@/components/List/Profile'
 import ItemDimmer from '@/components/List/ItemDimmer'
 import Dimmer from '@/components/Dimmer'
-import { initState } from '../store/mock.window'
-import { getRepos } from '../mocks.data'
 import { orderBy } from 'natural-orderby'
 import Vuex from 'vuex'
+import { createTestWrapper } from '../factory'
+import { initWindow } from '../store/mock.window'
+import { getRepos } from '../mocks.data'
+import { colors as customColors } from '../../config'
 
 const localVue = createLocalVue()
 localVue.use(Popover)
 localVue.use(Vuex)
 
-const { state } = initState(768, 1000)
+const { mockWindow } = initWindow(768, 1000)
 
 // mock computed topRepos from github store
 const topRepos = orderBy(
@@ -26,21 +28,10 @@ const topRepos = orderBy(
   ['desc']
 ).slice(0, 10)
 
-const mocks = {
-  $moment: () => {
-    return {
-      format: () => jest.fn(),
-    }
-  },
-}
-
-let options = {
+const options = {
   localVue,
   computed: {
     topRepos: () => topRepos,
-  },
-  mocks: {
-    ...mocks,
   },
   stubs: {
     Banner,
@@ -65,31 +56,43 @@ describe('Index', () => {
       setTopRepos: jest.fn(),
     }
 
-    let github = {
+    const github = {
       namespaced: true,
       actions,
     }
 
-    let window = {
+    const window = {
       namespaced: true,
-      state,
+      state: {
+        window: mockWindow,
+      },
+    }
+
+    const colors = {
+      namespaced: true,
+      state: {
+        colors: {
+          colors: customColors,
+        },
+      },
     }
 
     store = new Vuex.Store({
       modules: {
         github,
         window,
+        colors,
       },
     })
 
-    wrapper = mount(Index, { ...options, store })
+    wrapper = createTestWrapper(Index, { ...options, store })
   })
 
   test('is a Vue instance', () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  it('renders Banner component', async () => {
+  it('renders Banner component', () => {
     const banner = wrapper.findComponent(Banner)
 
     expect(banner.exists()).toBe(true)
@@ -97,21 +100,21 @@ describe('Index', () => {
 
   //
 
-  it('renders ListContainer component', async () => {
+  it('renders ListContainer component', () => {
     const listContainer = wrapper.findAllComponents(ListContainer)
 
     expect(listContainer.exists()).toBe(true)
     expect(listContainer.length).toEqual(1)
   })
 
-  it('renders 10 List item components', async () => {
+  it('renders 10 List item components', () => {
     const list = wrapper.findAllComponents(ListItem)
 
     expect(list.exists()).toBe(true)
     expect(list.length).toEqual(wrapper.vm.topRepos.length)
   })
 
-  test('item[0].stargazerCount is greater than item[1].stargazerCount and so on', async () => {
+  test('item[0].stargazerCount is greater than item[1].stargazerCount and so on', () => {
     const list = wrapper.findAllComponents(ListItem)
 
     for (let i = 0; i < list.length; i++) {

@@ -6,7 +6,7 @@ author: Rhan Miano
 
 # The Starred PH
 
-Top 10 most starred Github repositories initiated by developers located in the Philippines
+Top 10 most starred Github repositories in the Philippines
 
 ## Context
 
@@ -26,12 +26,18 @@ This project is inspired by the following existing projects:
 
 ## How is the list being generated?
 
-1. Fetch 100 most followed Github users with "Philippines" indicated in their location.
+1. Fetch 100 most followed Github users with "philippines" indicated in their location.
 2. Users must have at least 10 followers.
-3. List their top 10 repos based on stargazers count. (The project limits the list in to top 10 repositories only for now, and there's a possibility that a user's repositories may fill in one or more slots)
+3. List their top 10 repos based on stargazers count. (The project limits the list in to top 10 repositories only for now, and there's a possibility that a user's repositories may fill in one or more spot in the list)
 4. Repository must be public, must be originally owned by the user and is not forked.
-5. Do steps 1 to 4 but with users with "PH" indicated in their location.
+5. Do steps 1 to 4 but with users with ",+ph" indicated in their location.
 6. Merge all collected repos and sort those from highest stargazer count, get the top 10.
+
+### Caveats
+
+Since the users' location is free-text, users with cities only or did not indicated their location at all will not be included in the searching. This can be resolved by indicating "Philippines" or "PH" in your location. `e.g. Manila, Philippines or Manila, PH`
+
+Also, repositories that are being searched in the query are created by individual users not by organizations.
 
 ## Contribute
 

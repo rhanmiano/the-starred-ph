@@ -2,7 +2,7 @@
   <div class="container">
     <Header />
     <Nuxt />
-    <!-- <AdsRectangular /> -->
+    <AdsRectangular />
     <Footer />
   </div>
 </template>

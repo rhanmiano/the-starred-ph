@@ -13,8 +13,7 @@ export default {
   data() {
     return {
       banner: {
-        title:
-          'Top 10 most starred Github repositories initiated by developers located in the Philippines',
+        title: 'Top 10 most starred Github repositories in the Philippines',
         kicker:
           'Are you an innovator and wondering where to find inspirations and people to follow? Here comes a short list',
       },
@@ -29,7 +28,7 @@ export default {
     // write session storage if not set yet
     if (!sessionStorage.getItem(process.env.SESSION_KEY_NAME)) {
       await this.getCollectedRepos({ location: 'philippines', first: 100 })
-      await this.getCollectedRepos({ location: 'ph', first: 100 })
+      await this.getCollectedRepos({ location: ',+ph', first: 100 })
       await sessionStorage.setItem(
         process.env.SESSION_KEY_NAME,
         JSON.stringify(this.topRepos)

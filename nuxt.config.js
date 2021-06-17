@@ -1,13 +1,5 @@
-import { head } from './assets/js/global'
+import { head } from './config'
 require('dotenv').config()
-
-/* const tailwind = require('tailwindcss')
-const purgecss = require('@fullhuman/postcss-purgecss')
-
-const postcssPlugins = [tailwind()]
-
-if (process.env.GRIDSOME_ENV === 'production')
-  postcssPlugins.push(purgecss(require('./purgecss.config.js'))) */
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -55,7 +47,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxt/content' /* , '@nuxtjs/google-adsense' */, '@nuxtjs/gtm'],
+  modules: ['@nuxt/content', '@nuxtjs/google-adsense', '@nuxtjs/gtm'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -72,13 +64,13 @@ export default {
   },
 
   // Google Adsense config
-  /* 'google-adsense': {
+  'google-adsense': {
     id:
       process.env.ENVIRONMENT == 'production'
         ? process.env.CA_PUB
         : 'ca-pub-#########',
     test: process.env.ENVIRONMENT != 'production',
-  }, */
+  },
 
   // Google Tag Manager config
   gtm: {

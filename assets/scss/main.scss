@@ -4,20 +4,19 @@
 @import './base/fonts';
 
 // Liquid Typeset
-$base-size: 14;
+$base-size: 16;
 $max-size: 18;
 
 $from: 321;
 $to: 992;
 
-$font-base-size: 14px;
+$font-base-size: 16px;
 $font-max-size: 18px;
 
 // HTML base
 html {
-  font: normal normal 300 #{$font-base-size} / 1.618em 'PT Sans',
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Arial, sans-serif;
+  font: normal normal 300 #{$font-base-size} / 1.618em 'PT Sans', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -72,7 +71,7 @@ h4 {
   @apply transition duration-200;
 
   &:hover {
-    @apply text-brand;
+    @apply text-brand-n1;
   }
 }
 

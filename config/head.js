@@ -1,8 +1,4 @@
-export const title = 'The Starred PH'
-export const description =
-  'Top 10 most starred Github repositories initiated by developers located in the Philippines'
-export const url = 'https://starredph.com/'
-export const banner = `${url}images/banner.png`
+import { title, description, url, banner } from './info'
 
 export const head = {
   title,

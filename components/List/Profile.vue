@@ -24,7 +24,7 @@
           width="15"
           height="15"
           name="user-location"
-          :fill="'#207fb1'"
+          :fill="$store.state.colors.colors.brand"
         ></unicon>
         {{ profile.location }}
       </p>
@@ -34,7 +34,7 @@
           width="15"
           height="15"
           name="chat-bubble-user"
-          :fill="'#207fb1'"
+          :fill="$store.state.colors.colors.brand"
         ></unicon>
         <a
           class="--link"
@@ -75,9 +75,8 @@ export default {
 </script>
 
 <style>
-[data-popover$='-github-profile'] {
-  @apply shadow-md p-2;
-  /* width: 300px !important; */
+.vue-popover {
+  @apply shadow-md p-4;
 
   h4 {
     margin: 0 0 0.5rem 0;

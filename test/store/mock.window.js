@@ -1,10 +1,8 @@
-export const initState = (innerWidth = 0, innerHeight = 0) => {
+export const initWindow = (innerWidth = 0, innerHeight = 0) => {
   return {
-    state: {
-      window: {
-        innerWidth,
-        innerHeight,
-      },
+    mockWindow: {
+      innerWidth,
+      innerHeight,
     },
   }
 }

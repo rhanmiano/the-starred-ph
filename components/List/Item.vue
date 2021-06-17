@@ -3,13 +3,13 @@
     <div class="ui-card--list-item">
       <div class="--list-item-info">
         <div>
-          <h4 class="--list-item-title">
+          <strong class="--list-item-title">
             <unicon
               class="self-center mr-1"
               width="15"
               height="15"
               name="code-branch"
-              :fill="'#207fb1'"
+              :fill="$store.state.colors.colors.brand"
             ></unicon>
             <template v-if="$store.state.window.innerWidth >= 768">
               <span
@@ -41,7 +41,7 @@
                 >{{ repo.name }}
               </a>
             </span>
-          </h4>
+          </strong>
           <p class="--list-item-description">
             {{ repo.description }}
           </p>
@@ -78,7 +78,7 @@
               :width="$store.state.window.innerWidth < 768 ? 14 : 20"
               :height="$store.state.window.innerWidth < 768 ? 14 : 20"
               name="star"
-              :fill="'#207fb1'"
+              :fill="$store.state.colors.colors.brand"
               icon-style="monochrome"
             >
             </unicon>
@@ -140,12 +140,6 @@ export default {
             uppercase: false,
           })
         : this.repo.stargazerCount
-    },
-  },
-  methods: {
-    showModal() {
-      console.log('asdasdasd')
-      this.$refs[`${this.listId}`].show()
     },
   },
 }

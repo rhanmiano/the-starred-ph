@@ -1,10 +1,11 @@
-import { mount } from '@vue/test-utils'
 import Footer from '@/components/Footer'
+import { createTestWrapper } from '../factory'
+import { author } from '../../config'
 
 const githubLink = 'https://github.com/rhanmiano/the-starred-ph'
-const portfolioLink = 'https://rhanmiano.me'
+const portfolioLink = author.url
 const mockLinks = [{ link: '/', text: 'Home', target: '', rel: '' }]
-const wrapper = mount(Footer, {
+const wrapper = createTestWrapper(Footer, {
   data() {
     return {
       curYear: 2022,

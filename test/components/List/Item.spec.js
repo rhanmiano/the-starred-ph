@@ -1,33 +1,26 @@
 import { createLocalVue, mount } from '@vue/test-utils'
+
 import Popover from 'vue-js-popover'
 import Item from '@/components/List/Item'
 import ListProfile from '@/components/List/Profile'
-import { initState } from '../../store/mock.window'
+import { createTestWrapper } from '../../factory'
+import { initWindow } from '../../store/mock.window'
 import { getRepo } from '../../mocks.data'
 
 const repo = getRepo()
 const localVue = createLocalVue()
 localVue.use(Popover)
 
-const mocks = {
-  $moment: () => {
-    return {
-      format: () => jest.fn(),
-    }
-  },
-}
-
-let options = {
+const options = {
   localVue,
   data() {
     return {
-      listId: `${repo.id}-${repo.owner.id}-github-profile`,
+      listId: `${repo.id}-${repo.owner.id}`,
     }
   },
   propsData: {
     repo,
   },
-  mocks,
   stubs: {
     ListProfile,
   },
@@ -35,12 +28,15 @@ let options = {
 
 describe('Item', () => {
   test('is a Vue instance', () => {
-    const { state } = initState(768, 1000)
-    const wrapper = mount(Item, {
+    const { mockWindow } = initWindow(768, 1000)
+    const wrapper = createTestWrapper(Item, {
       ...options,
       mocks: {
-        ...mocks,
-        $store: { state },
+        $store: {
+          state: {
+            window: mockWindow,
+          },
+        },
       },
     })
 
@@ -48,12 +44,15 @@ describe('Item', () => {
   })
 
   it("renders github user login with a class of 'name-popover', should have a modal behavior if screen size is >= 768 on click", async () => {
-    const { state } = initState(768, 1000)
-    const wrapper = mount(Item, {
+    const { mockWindow } = initWindow(768, 1000)
+    const wrapper = createTestWrapper(Item, {
       ...options,
       mocks: {
-        ...mocks,
-        $store: { state },
+        $store: {
+          state: {
+            window: mockWindow,
+          },
+        },
       },
     })
 
@@ -75,18 +74,20 @@ describe('Item', () => {
 
   // test github user login whether it should open a modal on click
   it("renders github user login with a class of 'name-popover', should have a modal behavior if screen size is < 768 on click", async () => {
-    const { state } = initState(700, 1000)
-    const wrapper = mount(Item, {
+    const { mockWindow } = initWindow(700, 1000)
+    const wrapper = createTestWrapper(Item, {
       ...options,
       mocks: {
-        ...mocks,
-        $store: { state },
-        $modal: {
-          show: () => jest.fn,
+        $store: {
+          state: {
+            window: mockWindow,
+          },
         },
       },
     })
 
+    const mockShowMethod = jest.fn()
+    wrapper.vm.$refs[`${wrapper.vm.listId}`].show = mockShowMethod
     const username = wrapper.find('.name-popover')
 
     expect(username.exists()).toBe(true)
@@ -104,12 +105,15 @@ describe('Item', () => {
   })
 
   it('displays repo name and it links out to its repo url', async () => {
-    const { state } = initState(768, 1000)
-    const wrapper = mount(Item, {
+    const { mockWindow } = initWindow(768, 1000)
+    const wrapper = createTestWrapper(Item, {
       ...options,
       mocks: {
-        ...mocks,
-        $store: { state },
+        $store: {
+          state: {
+            window: mockWindow,
+          },
+        },
       },
     })
 
@@ -121,12 +125,15 @@ describe('Item', () => {
   })
 
   it('shows stargazer count with k if > 9999', async () => {
-    const { state } = initState(768, 1000)
-    const wrapper = mount(Item, {
+    const { mockWindow } = initWindow(768, 1000)
+    const wrapper = createTestWrapper(Item, {
       ...options,
       mocks: {
-        ...mocks,
-        $store: { state },
+        $store: {
+          state: {
+            window: mockWindow,
+          },
+        },
       },
     })
 
