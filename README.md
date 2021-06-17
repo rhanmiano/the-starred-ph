@@ -1,6 +1,6 @@
 # The Starred PH
 
-:star: Top 10 most starred Github repositories initiated by developers located in the Philippines
+:star: Top 10 most starred Github repositories in the Philippines
 
 ## About
 

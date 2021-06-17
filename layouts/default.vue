@@ -2,7 +2,7 @@
   <div class="container">
     <Header />
     <Nuxt />
-    <!-- <AdsRectangular /> -->
+    <AdsRectangular />
     <Footer />
   </div>
 </template>
@@ -16,7 +16,6 @@ export default {
     }),
   },
   mounted() {
-    console.log('here', this.$store.state.colors.colors.brand)
     this.onResize()
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize)
