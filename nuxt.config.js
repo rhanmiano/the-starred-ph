@@ -47,7 +47,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxt/content', '@nuxtjs/google-adsense', '@nuxtjs/gtm'],
+  modules: ['@nuxt/content' /* '@nuxtjs/google-adsense' */, , '@nuxtjs/gtm'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -63,14 +63,14 @@ export default {
     },
   },
 
-  // Google Adsense config
+  /* // Google Adsense config
   'google-adsense': {
     id:
       process.env.ENVIRONMENT == 'production'
         ? process.env.CA_PUB
         : 'ca-pub-#########',
     test: process.env.ENVIRONMENT != 'production',
-  },
+  }, */
 
   // Google Tag Manager config
   gtm: {
