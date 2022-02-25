@@ -38,9 +38,9 @@ $ npm run test
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-### Github Graphql API
+### Github GraphQL API
 
-To be able to request to Github's Graphql API, one must secure an [OAuth token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) with the right scopes. Please follow along with this provided [documentation](https://docs.github.com/en/graphql/guides/forming-calls-with-graphql#authenticating-with-graphql).
+To be able to request to Github's GraphQL API, one must secure an [OAuth token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) with the right scopes. Please follow along with this provided [documentation](https://docs.github.com/en/graphql/guides/forming-calls-with-graphql#authenticating-with-graphql).
 
 ### Environment
 
@@ -59,7 +59,7 @@ SESSION_KEY_NAME=tph-github-repos
 
 ### Rate limit and caching
 
-To avoid excessive calls to Github's Graphql API, query results are being cached to user's browser using session storage.
+To avoid excessive calls to Github's GraphQL API, query results are being cached to user's browser using session storage.
 
 ## What's next?
 
