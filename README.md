@@ -16,6 +16,19 @@ More details are provided in [content/about.md](https://github.com/rhanmiano/the
 
 ## Setup and Dependencies
 
+### System Requirements
+
+It has been years since this project was initially setup and there's a lot that has changed to Vue ecosystem already. The main requirement for this project is Vue 2 and Nuxt 2. Plans to migrate this to Vue 3 and Nuxt 3 is still on research.
+
+As of last commit, the project should work on a local environment with.
+
+```
+node v14.21.2
+npm 6.14.17
+vue 2.6.12
+nuxt 2.15.3
+```
+
 ### Nuxt
 
 ```bash
@@ -73,7 +86,7 @@ Ideas such as:
 
 ## Contribute
 
-Hi :wave:, thanks for taking some time to read this document. If it happens that you know Nuxt and have experience in implementing any of the ideas mentioned above, or have some suggestions on the current look/behavior of the site, or seen some inconsistencies, please feel free to submit an issue and/or create a pull request.
+Hi :wave:, thanks for taking some time to check this project out and further read this document. If it happens that you know Nuxt and have experience in implementing any of the ideas mentioned above, or have some suggestions on the current look/behavior of the site, or seen some inconsistencies, please feel free to submit an issue and/or create a pull request.
 
 Contributions are very much welcome in this project.
 

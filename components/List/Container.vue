@@ -73,7 +73,7 @@ export default {
 }
 </script>
 
-<style style="scss">
+<style lang="scss">
 .ui-card {
   &--container {
     display: block;
