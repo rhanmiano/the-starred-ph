@@ -145,7 +145,7 @@ export default {
 }
 </script>
 
-<style style="scss">
+<style lang="scss">
 .--profile-modal-wrapper {
   min-height: 0 !important;
 }

@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style style="scss" scoped>
+<style lang="scss" scoped>
 .dimmer {
   display: block;
   background-color: gainsboro;

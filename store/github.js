@@ -1,5 +1,5 @@
-import { GET_REPOS } from '@/gql/github/queries'
 import { orderBy } from 'natural-orderby'
+import { GET_REPOS } from '@/gql/github/queries'
 
 export const state = () => ({
   topRepos: [],
@@ -27,7 +27,7 @@ export const actions = {
       .$post(`${process.env.GH_GQL_API_URL}`, GET_REPOS(location, first))
       .then(({ data }) => {
         data.search.edges.forEach((edge) => {
-          const repoCount = edge.node.repositories.totalCount
+          const repoCount = edge.node?.repositories?.totalCount ?? 0
           if (repoCount > 0) {
             repos = [
               ...repos,
