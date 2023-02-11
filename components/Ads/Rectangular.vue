@@ -8,7 +8,7 @@
 export default {}
 </script>
 
-<style style="scss">
+<style lang="scss">
 .ui-rectangular-ad {
   @apply w-3/4 h-32 block;
   margin: 2rem auto;
