@@ -1,5 +1,5 @@
 {
-  "name": "the-starred-ph",
+  "name": "The Starred PH",
   "description": "Top 10 most starred Github repositories in the Philippines",
   "repository": "github:rhanmiano/the-starred-ph",
   "author": {
@@ -7,9 +7,10 @@
     "email": "rhanmiano29@gmail.com",
     "url": "https://rhanmiano.me"
   },
+  "homepage": "https://starredph.com",
   "version": "0.1.0",
   "license": "MIT",
-  "private": true,
+  "private": {},
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
