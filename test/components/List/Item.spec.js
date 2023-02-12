@@ -1,11 +1,11 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 
 import Popover from 'vue-js-popover'
-import Item from '@/components/List/Item'
-import ListProfile from '@/components/List/Profile'
 import { createTestWrapper } from '../../factory'
 import { initWindow } from '../../store/mock.window'
 import { getRepo } from '../../mocks.data'
+import ListProfile from '@/components/List/Profile'
+import Item from '@/components/List/Item'
 
 const repo = getRepo()
 const localVue = createLocalVue()

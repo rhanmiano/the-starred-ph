@@ -1,6 +1,13 @@
-import { createLocalVue, mount } from '@vue/test-utils'
-import Index from '@/pages/index'
+import { createLocalVue } from '@vue/test-utils'
 import Popover from 'vue-js-popover'
+import { orderBy } from 'natural-orderby'
+import Vuex from 'vuex'
+import { createTestWrapper } from '../factory'
+import { initWindow } from '../store/mock.window'
+import { getRepos } from '../mocks.data'
+import { colors as customColors } from '../../config'
+import { resourceType } from '@/helpers/constants'
+import Index from '@/pages/index'
 import Banner from '@/components/Banner'
 import ListContainer from '@/components/List/Container'
 import ListItem from '@/components/List/Item'
@@ -8,12 +15,6 @@ import ListItemDimmer from '@/components/List/ItemDimmer'
 import ListProfile from '@/components/List/Profile'
 import ItemDimmer from '@/components/List/ItemDimmer'
 import Dimmer from '@/components/Dimmer'
-import { orderBy } from 'natural-orderby'
-import Vuex from 'vuex'
-import { createTestWrapper } from '../factory'
-import { initWindow } from '../store/mock.window'
-import { getRepos } from '../mocks.data'
-import { colors as customColors } from '../../config'
 
 const localVue = createLocalVue()
 localVue.use(Popover)
@@ -59,6 +60,10 @@ describe('Index', () => {
     const github = {
       namespaced: true,
       actions,
+      getters: {
+        loading: () => false,
+        type: () => resourceType.USER,
+      },
     }
 
     const window = {

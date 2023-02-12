@@ -1,9 +1,19 @@
 <template>
   <section class="ui-card--container">
     <!-- Toggle view, commented out temporarily -->
-    <!-- <div class="ui-card-utilities">
-      <div class="ui-card-view-number"></div>
-      <div class="ui-card-view-type">
+    <div class="ui-card-utilities">
+      <div class="ui-card-list-type">
+        <select
+          id="list_type"
+          v-model="type"
+          name="list-type"
+          @change="onTypeChange"
+        >
+          <option value="User">Individuals</option>
+          <option value="Organization">Organizations</option>
+        </select>
+      </div>
+      <!-- <div class="ui-card-view-type">
         <div
           class="view-type --list-view"
           :class="{ '-active': viewType }"
@@ -32,25 +42,27 @@
             icon-style="monochrome"
           ></unicon>
         </div>
-      </div>
-    </div> -->
-    <div v-show="repos.length > 0">
-      <transition-group name="list" tag="section">
-        <ListItem
-          v-for="(repo, id) in repos"
-          :key="repo.id"
-          :repoIndex="id"
-          :repo="repo"
-        />
-      </transition-group>
+      </div> -->
     </div>
-    <div v-show="repos.length == 0">
+    <div v-show="!loading && repos.length > 0">
+      <!-- <transition-group name="list" tag="section"> -->
+      <ListItem
+        v-for="(repo, id) in repos"
+        :key="repo.id"
+        :repoIndex="id"
+        :repo="repo"
+      />
+      <!-- </transition-group> -->
+    </div>
+    <div v-show="loading">
       <ListItemDimmer v-for="{ index } in placeholder" :key="index" />
     </div>
   </section>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   props: {
     repos: {
@@ -65,9 +77,21 @@ export default {
       gridViewActive: false,
     }
   },
+  computed: {
+    ...mapGetters({
+      loading: 'github/loading',
+      type: 'github/type',
+    }),
+  },
   methods: {
+    ...mapActions({
+      setType: 'github/setType',
+    }),
     toggleViewType(val) {
       this.viewType = val
+    },
+    onTypeChange(e) {
+      this.setType(e.currentTarget.value)
     },
   },
 }
@@ -99,9 +123,25 @@ export default {
 }
 
 .ui-card-utilities {
-  @apply hidden md:flex md:flex-wrap md:justify-end;
+  @apply flex flex-wrap justify-start;
 
-  .ui-card-view-number {
+  .ui-card-list-type {
+    select#list_type {
+      @apply rounded-md  px-2 py-1 text-denotive-highlight text-sm;
+      outline: none;
+      -moz-appearance: none; /* Firefox */
+      -webkit-appearance: none; /* Safari and Chrome */
+      appearance: none;
+      background: hsl(208deg 45% 67% / 35%);
+      cursor: pointer;
+
+      option {
+        @apply rounded-sm text-gray-600 mt-1;
+        background: white;
+        outline: none;
+        border: none;
+      }
+    }
   }
 
   .ui-card-view-type {

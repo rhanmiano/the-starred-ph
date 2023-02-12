@@ -1,5 +1,5 @@
-import Banner from '@/components/Banner'
 import { createTestWrapper } from '../factory'
+import Banner from '@/components/Banner'
 
 const title = 'This is some title'
 const kicker = 'This is some kicker'
