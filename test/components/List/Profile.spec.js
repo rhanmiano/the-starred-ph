@@ -1,7 +1,7 @@
-import ListProfile from '@/components/List/Profile'
 import { createTestWrapper } from '../../factory'
 import { getRepo } from '../../mocks.data'
 import { colors } from '../../../config'
+import ListProfile from '@/components/List/Profile'
 
 const repo = getRepo()
 const wrapper = createTestWrapper(ListProfile, {

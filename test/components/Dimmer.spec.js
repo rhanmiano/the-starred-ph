@@ -1,5 +1,5 @@
-import Dimmer from '@/components/Dimmer'
 import { createTestWrapper } from '../factory'
+import Dimmer from '@/components/Dimmer'
 
 const width = '100px'
 const height = '200px'
@@ -16,7 +16,7 @@ describe('Dimmer', () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  it('should render a div with class of dimmer, and contains appropriate styles', async () => {
+  it('should render a div with class of dimmer, and contains appropriate styles', () => {
     const dimmer = wrapper.find('div.dimmer')
 
     expect(dimmer.exists()).toBeTruthy()

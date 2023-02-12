@@ -10,7 +10,7 @@
   "homepage": "https://starredph.com",
   "version": "0.1.0",
   "license": "MIT",
-  "private": {},
+  "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
