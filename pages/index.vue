@@ -6,8 +6,8 @@
 </template>
 
 <script>
-// import { orderBy } from 'natural-orderby'
 import { mapActions, mapGetters } from 'vuex'
+import { resourceType } from '@/helpers/constants'
 
 export default {
   data() {
@@ -22,29 +22,40 @@ export default {
   computed: {
     ...mapGetters({
       topRepos: 'github/topRepos',
+      type: 'github/type',
     }),
   },
-  async mounted() {
-    // write session storage if not set yet
-    if (!sessionStorage.getItem(process.env.SESSION_KEY_NAME)) {
-      await this.getCollectedRepos({ location: 'philippines', first: 100 })
-      await this.getCollectedRepos({ location: ',+ph', first: 100 })
-      await sessionStorage.setItem(
-        process.env.SESSION_KEY_NAME,
-        JSON.stringify(this.topRepos)
-      )
-    } else {
-      const repos = await JSON.parse(
-        sessionStorage.getItem(process.env.SESSION_KEY_NAME)
-      )
-      this.setTopRepos(repos)
-    }
+  watch: {
+    type() {
+      this.collectRepos()
+    },
+  },
+  mounted() {
+    this.collectRepos()
   },
   methods: {
     ...mapActions({
       getCollectedRepos: 'github/getCollectedRepos',
       setTopRepos: 'github/setTopRepos',
     }),
+    async collectRepos() {
+      let key = process.env.SESSION_USER_KEY_NAME
+
+      if (this.type === resourceType.ORG) {
+        key = process.env.SESSION_ORG_KEY_NAME
+      }
+
+      if (!sessionStorage.getItem(key)) {
+        this.setTopRepos([])
+        await this.getCollectedRepos({
+          type: this.type,
+        })
+        sessionStorage.setItem(key, JSON.stringify(this.topRepos))
+      } else {
+        const repos = await JSON.parse(sessionStorage.getItem(key))
+        this.setTopRepos(repos)
+      }
+    },
   },
 }
 </script>

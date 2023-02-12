@@ -44,7 +44,8 @@ export default {
     GH_GQL_API_URL:
       process.env.GH_GQL_API_URL || 'https://api.github.com/graphql',
     GH_GQL_ACCESS_KEY: process.env.GH_GQL_ACCESS_KEY,
-    SESSION_KEY_NAME: process.env.SESSION_KEY_NAME,
+    SESSION_USER_KEY_NAME: process.env.SESSION_USER_KEY_NAME,
+    SESSION_ORG_KEY_NAME: process.env.SESSION_ORG_KEY_NAME,
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules

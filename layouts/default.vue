@@ -87,14 +87,19 @@ header {
 }
 
 /** List items styles and animation */
-.list-enter-active,
+.list-enter-active {
+  /* transition: all 0.8s ease; */
+}
 .list-leave-active {
-  transition: all 1s;
+  transition: all 0.8s ease-out;
 }
 .list-enter,
 .list-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+}
+
+.list-leave-to {
+  transform: translateY(8px);
 }
 
 /** Nuxt content styles */

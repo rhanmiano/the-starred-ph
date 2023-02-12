@@ -52,8 +52,22 @@
     </template>
     <hr />
     <p class="text-xs mt-2">
-      <strong>{{ profile.followers.totalCount }}</strong> Followers
-      <strong>{{ profile.following.totalCount }}</strong> Following
+      <template v-if="profile.followers">
+        <strong>{{ profile.followers.totalCount }}</strong>
+        Followers
+      </template>
+      <template v-if="profile.following">
+        <strong v-if="profile.following">{{
+          profile.following.totalCount
+        }}</strong>
+        Following
+      </template>
+      <template v-if="profile.sponsors">
+        <strong v-if="profile.sponsors">{{
+          profile.sponsors.totalCount
+        }}</strong>
+        Sponsors
+      </template>
       <strong>{{ profile.repoCount }}</strong> Repositories
     </p>
   </section>

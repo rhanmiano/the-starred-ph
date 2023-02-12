@@ -1,7 +1,7 @@
-import ItemDimmer from '@/components/List/ItemDimmer'
-import Dimmer from '@/components/Dimmer'
 import { createTestWrapper } from '../../factory'
 import { initWindow } from '../../store/mock.window'
+import ItemDimmer from '@/components/List/ItemDimmer'
+import Dimmer from '@/components/Dimmer'
 
 const { mockWindow } = initWindow(768, 1000)
 const wrapper = createTestWrapper(ItemDimmer, {

@@ -4,7 +4,7 @@
 
 ## About
 
-The project aims to be a station for fellow pinoy developers and their projects to be promoted, so that others may see it as well. For starters also, who might be curious of what other tech craftsmen do at their spare time and what frameworks they use.
+The project aims to be a station for fellow Filipino developers and their projects to be highlighted, so that others may see it as well. This is also a great opportunity for starters, who might be curious, to see the various projects that other tech enthusiasts pursue during their free time and the frameworks they utilize.
 
 More details are provided in [content/about.md](https://github.com/rhanmiano/the-starred-ph/blob/master/content/about.md) file.
 

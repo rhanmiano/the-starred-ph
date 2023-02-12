@@ -1,6 +1,6 @@
-import Footer from '@/components/Footer'
 import { createTestWrapper } from '../factory'
 import { author } from '../../config'
+import Footer from '@/components/Footer'
 
 const githubLink = 'https://github.com/rhanmiano/the-starred-ph'
 const portfolioLink = author.url
