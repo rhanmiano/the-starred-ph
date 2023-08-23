@@ -77,15 +77,35 @@ export const actions = {
 
 export const getters = {
   topRepos(state) {
-    return state.topRepos && state.topRepos.length
-      ? state.topRepos
-      : state.collectedRepos.length
-      ? orderBy(
-          state.collectedRepos,
-          [(v) => v.stargazerCount],
-          ['desc']
-        ).slice(0, 10)
-      : []
+    if (state.topRepos?.length) {
+      return state.topRepos
+    }
+
+    if (state.collectedRepos?.length) {
+      const sortedData = orderBy(
+        state.collectedRepos,
+        [(v) => v.stargazerCount],
+        ['desc']
+      )
+
+      // remove duplicates by owner id & retain repo with
+      // highest stargazer count
+      return Array.from(
+        sortedData
+          .reduce((m, obj) => {
+            const curr = m.get(obj.owner.id)
+            return m.set(
+              obj.owner.id,
+              curr
+                ? curr.stargazerCount < obj.stargazerCount
+                  ? obj
+                  : curr
+                : obj
+            )
+          }, new Map())
+          .values()
+      ).slice(0, 10)
+    }
   },
   type(state) {
     return state.type

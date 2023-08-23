@@ -10,7 +10,7 @@ Top 10 most starred Github repositories in the Philippines
 
 ## Context
 
-In the ever growing horizon of people and set of technologies available in the development bubble nowadays, it can be a challenge for new Filipino devs to find inspiration and guidance. 
+In the ever growing horizon of people and set of technologies available in the development bubble nowadays, it can be a challenge for new Filipino devs to find inspiration and guidance.
 
 The project aims to be a station for fellow Filipino developers and their projects to be highlighted, so that others may see it as well. This is also a great opportunity for starters, who might be curious, to see the various projects that other tech enthusiasts pursue during their free time and the frameworks they utilize.
 
@@ -26,11 +26,11 @@ This project is inspired by the following existing projects:
 
 ## How is the list being generated?
 
-1. Fetch 100 most followed Github users with "philippines" & "+ph" indicated in their location.
-2. Users/Orgs must have at least 10 followers.
-3. List their top 10 repos based on stargazers count. (The project limits the list in to top 10 repositories only for now, and there's a possibility that a user's repositories may fill in one or more spot in the list)
+1. Fetch first 50 most followed Github users/orgs with "philippines" & "+ph" indicated in their location.
+2. Users must have at least 50 followers. Orgs must have at least 10 followers.
+3. List their top 10 repos based on stargazers count. (The project limits the list in to top 10 repositories only for now)
 4. Repository must be public, must be originally owned by the user and is not forked.
-5. Merge all collected repos and sort those from highest stargazer count, and then get the top 10.
+5. Merge all collected repos. Sort those from highest stargazer count. Should there be any duplicate by owner's id, retain the one with the highest stargazers count, and then get the top 10.
 
 ### Caveats
 

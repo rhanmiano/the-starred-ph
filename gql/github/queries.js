@@ -2,7 +2,7 @@ export const GET_REPOS_BY_USER = () => {
   return {
     query: `query
     {
-      search(type: USER, query: "location:philippines location:+ph sort:followers-desc followers:>=10 type:user", first: 100) {
+      search(type: USER, query: "location:philippines location:+ph sort:followers-desc followers:>=50 type:user", first: 50) {
         userCount
         edges {
           node {
@@ -58,7 +58,7 @@ export const GET_REPOS_BY_ORG = () => {
   return {
     query: `query
     {
-      search(type: USER, query: "location:philippines location:+ph sort:followers-desc followers:>=10 type:org", first: 100) {
+      search(type: USER, query: "location:philippines location:+ph sort:followers-desc followers:>=10 type:org", first: 50) {
         userCount
         edges {
           node {
