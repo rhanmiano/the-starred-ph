@@ -57,8 +57,8 @@ That is all! Read the remaining sections of this document to get going.
 #### Before anything else
 
 - **Make sure that the feature is related to what The Starred PH aims to be.**
-  - If updates are to be made to the current top most starred Github repositories context, is the feature does not pivots to anything besides showing the most starred repositories, does it supplement the current behaviour?
-  - If it is from new platform(see ideas here), is the feature essential to promote our Pinoy developers, creatives and such?
+  - If updates are to be made to the current top most starred Github repositories context, does the feature not pivoting to anything besides showing the most starred repositories, does it supplement the current behaviour?
+  - If it is from new platform(see ideas [here](https://github.com/rhanmiano/the-starred-ph#whats-next)), is the feature essential to promote our Pinoy developers, creatives and such?
 - **Do check the provided [template](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/templates/ISSUE_TEMPLATE/feature_request.md) for feature requests** to see what are the needed details for the maintainer to consider your feature in mind.
 - **Submit your feature request.**
 
@@ -67,12 +67,18 @@ That is all! Read the remaining sections of this document to get going.
 **Note** I encourage first timers :beginner: (as I am new to Open Source also) to participate and unleash that inner nerd in you. You can read guides in **[here](https://www.firsttimersonly.com/)** on how to contribute to **[open source](https://opensource.guide/)** projects.
 
 - After making sure that all has been read, **fork** this repo.
-- `git clone your-forked-repo-in-here` Clone your forked repo in to your local machine.
-- `git fetch && git checkout develop` The `develop` branch will be our starting point, to avoid breaking what's in the `master`
-- `git remote add upstream https://github.com/rhanmiano/the-starred-ph.git` This will allow us to connect to the original remote repository.
-- `git fetch upstream` To fetch upstream branches.
-- `git branch --set-upstream-to=upstream/develop develop` To allow us to pull updates from the original remote **develop** branch.
-- `git checkout -b ${prefix}/descriptive-branch-name-here` Checkout to your branch. Prefix it with `feature/` or `fix/`, whatever is applicable to your updates.
+- Clone your forked repo in to your local machine. <br />
+  `git clone your-forked-repo-in-here`
+- The `develop` branch will be our starting point, to avoid breaking what's in the `master` <br />
+  `git fetch && git checkout develop`
+- This will allow us to connect to the original remote repository. <br />
+  `git remote add upstream https://github.com/rhanmiano/the-starred-ph.git`
+- To fetch upstream branches. <br />
+  `git fetch upstream`
+- To allow us to pull updates from the original remote **develop** branch. <br />
+  `git branch --set-upstream-to=upstream/develop develop`
+- Checkout to your branch. Prefix it with `feature/` or `fix/`, whatever is applicable to your updates.
+  `git checkout -b ${prefix}/descriptive-branch-name-here`
 - Code and push your changes.
 - Submit a **pull request**. Please do follow the [template](https://github.com/rhanmiano/the-starred-ph/blob/master/.github/templates/PULL_REQUEST_TEMPLATE.md) for requesting one.
 
